@@ -135,10 +135,31 @@ body {
 
 <br>
     <div class="video-container">
-        <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="dazn1de_embed.html" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe><br>
+        <iframe class="embed-responsive-item" id="iframe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="dazn1de_embed.html" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe>
 
 
 </div>
+
+<center><input class="button" onclick="mostrarMensaje2()" type="button" value="OP-JW" />
+  <input class="button" onclick="mostrarMensaje1()" type="button" value="OP-CLP" />
+
+
+</center>
+<br/>
+
+<script>
+function mostrarMensaje1() {
+document.getElementById("iframe").src = "dazn1de_embed.html"
+
+
+}
+function mostrarMensaje2() {
+document.getElementById("iframe").src = "https://metamorfosis.franzkafkapr.space/repro/?r=Ly8yODQ4NzQ4NzU4MjczODU3ODM3MTI4NzEyODctZHV0eWQyMjMyNTgzLnd2ZHItYXJjaGl2ZS5ndXJ1L2VtYmVkL2RlL2Rhem4xLnBocA=="
+}
+
+</script>
+
+
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
