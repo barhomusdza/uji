@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+    <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ESPN HD</title>
+<script src="1.js"></script>
+<script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
+<script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
+<script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
+<script src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
+<script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+
+<script>
+
+const url = window.location.href;
+let domain = (new URL(url));
+domain = domain.hostname;
+console.log(domain);
+
+</script>
+
+
+<style>
+body {
+      margin: 0;
+       background: #ececec;
+      font-family: 'arial', sans serif;
+    }
+    .contenedor {
+      background: #fafafa;
+      width: 50%;
+      margin: 0 auto;
+      padding: 10px 10px;
+      text-align: justify;
+    }
+    
+    .contenedor img {
+      width: 100%;
+    }
+    
+    @media (max-width:600px)  { 
+      .contenedor {
+        width: 90%;
+      }
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 15px;
+        height: 0;
+         overflow: hidden;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #68C420;
+      color: white;
+    }
+    
+    .topnav .icon {
+      display: none;
+    }
+    
+    .codembed {
+                float: left;
+                width: 100%;
+                height: auto;
+            }
+            .commenter {
+                float: left;
+            }
+            .commenter img {
+                width: 35px;
+                height: 35px;
+            }
+            .comment-text-area {
+                float: left;
+                width: 100%;
+                height: auto;
+            }
+    
+            .textinput {
+                float: left;
+                width: 100%;
+                min-height: 30px;
+                outline: none;
+                resize: none;
+                border: 1px solid grey;
+            }
+.button {
+  background-color: #50ff39; /* Green */
+  border: 3px solid Black;
+ 
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+  }
+
+</style>
+      
+    </head>
+    
+    <body  >
+ <div class="contenedor">
+    <div class="topnav" id="myTopnav">
+ <a href="index.html" class="active">Inicio</a>
+   <a href="canales.html"> Deportes </a>
+    <a href="note.html"> Canales </a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<br>
+<center><h2>TVN </h2></center>
+    <div class="video-container">
+
+    
+        <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="https://megadeportes.live/embed/repro/?r=aHR0cHM6Ly9tZWdhdGVsZXZpc2lvbmhkLmNvbS9zdi1tdC5waHA/Z2V0PWFIUjBjSE02THk5a2RIWnZkSFF0WVdKakxtRnJZVzFoYVhwbFpDNXVaWFF2WkdGemFGOXNhWFpsWHpFeU1qRXZiV0Z1YVdabGMzUXViWEJrJmtleT1aVEZrWlRVNE1HWmpORE16TlRsa1pUbGhZemcyWVRBeE9URTNPRGcyWVRZPSZrZXkyPU1qbGtOREl6TlRVeFlUTTVORGt4T1dabE5URXhOMlJoWkRjMlpXTTBZakk9" crolling="no" frameBorder="0" title="Reproductor 1" alt="Reproducir" allowfullscreen></iframe>
+</div>
+<br>
+
+   
+    </body>
+    </html>
