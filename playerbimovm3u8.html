@@ -1,0 +1,235 @@
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.bitmovin.com/player/web/8/bitmovinplayer-ui.css">
+
+  <meta charset="utf-8"><meta name="referrer" content="none"><meta http-equiv="cache-control" content="max-age=0">
+  <meta http-equiv="cache-control" content="no-cache"><meta http-equiv="expires" content="0"><meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"><meta http-equiv="pragma" content="no-cache"><meta name="robots" content="noindex"><script src="//cdn.bitmovin.com/player/web/8/bitmovinplayer.js"></script><style>.bitmovinplayer-poster {
+      position : absolute;
+      top : 0;
+      bottom : 0;
+      left : 0;
+      right : 0;
+      display : none;
+      background-size : contain;
+      background-position : center;
+      background-repeat : no-repeat;
+  }
+  
+  .bitmovinplayer-container {
+      padding: 0;
+      margin: 0;
+      position : relative;
+      /* overflow:hidden will be needed in the future to allow fit/stretch/etc the video */
+      overflow : hidden;
+      min-height: 150px;
+      min-width: 260px;
+      box-sizing: content-box;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+  }
+  .bitmovinplayer-container:before {
+      display: block;
+      content: '';
+      width: 100%;
+  }
+  .bitmovinplayer-container video, .bitmovinplayer-container object, .bitmovinplayer-container > canvas {
+      position: absolute;
+      top: 0;
+      left:0;
+      bottom:0;
+      right:0;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .bitmovinplayer-container > * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 0;
+  }
+  
+  .bitmovinplayer-container.aspect-16x9:before {
+      padding-bottom: 56.25%;
+  }
+  .bitmovinplayer-container.aspect-16x10:before {
+      padding-bottom: 62.5%;
+  }
+  .bitmovinplayer-container.aspect-4x3:before {
+      padding-bottom: 75%;
+  }
+  .bitmovinplayer-container.aspect-3x2:before {
+      padding-bottom: 66.66%;
+  }
+  
+  /* e.g. wordpress sets the height for these elements to 'auto' which leads to problems for example on Windows 7 in IE11 (with Flash) */
+  .bitmovinplayer-container object, .bitmovinplayer-container embed, .bitmovinplayer-container img {
+      height: 100%;
+  }
+  
+  .bitmovinplayer-container, .bitmovinplayer-ad-container {
+      width:100%;
+      height:100%;
+      background-color: black;
+      color: #ffffff;
+      /* make text (like subtitles etc.) unselectable */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+  }
+  .bitmovinplayer-container video, .bitmovinplayer-ad-container video {
+      object-fit: contain;
+      -o-object-fit: contain;
+  }
+  /* fullscreen */
+  html:-ms-fullscreen {
+      width:100%;
+      height:100%;
+  }
+  :-webkit-full-screen {
+      background-color:transparent;
+      width: 100% !important;
+      height: 100% !important;
+  }
+  video:-webkit-full-screen + .bitmovinplayer-ctrl {
+      background:#ccc; /* required for Chrome which doesn't heed the transparent value set above */
+  }
+  /* hide controls on fullscreen with WebKit */
+  *[data-fullscreen=true], *[data-legacy-fullscreen=true] {
+      max-width:100%;
+      max-height:100%;
+      width:100% !important;
+      height:100% !important;
+      background-color: black !important;
+      margin:0;
+      padding:0;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+  }
+  *[data-legacy-fullscreen=true] {
+      z-index: 99999;
+  }
+  
+  .bitmovinplayer-error-message ul {
+      text-align: left;
+  }
+  
+  .bitmovinplayer-error-message a {
+      color: #31c5c7;
+  }
+  /* from http://stackoverflow.com/a/37553385 */
+  .bitmovinplayer-container video::-webkit-media-controls-panel {
+      display: none!important;
+      -webkit-appearance: none;
+  }
+  .bitmovinplayer-container video::--webkit-media-controls-play-button {
+      display: none!important;
+      -webkit-appearance: none;
+  }
+  .bitmovinplayer-container video::-webkit-media-controls-start-playback-button {
+      display: none!important;
+      -webkit-appearance: none;
+  }
+  </style>
+  <script src="//www.gstatic.com/cast/sdk/libs/sender/1.0/cast_framework.js"></script>
+  <script src="//www.gstatic.com/eureka/clank/107/cast_sender.js"></script></head>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <body>
+    <div id="bitmovin-94527"> </div>
+      <style>
+  .boton{
+   padding: 0.5rem;
+   border: 0.5rem solid rebeccapurple; 
+   border-radius: 0.3rem;
+   font-size: .9rem;
+   background: rebeccapurple;
+   color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  
+  
+  #parent > a {
+    opacity: 0.6;
+    position:relative;
+    float: center;
+    right: -50%;
+    bottom:100px;
+  }
+  
+  </style>
+  <script type="text/javascript">
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+  var getURL = getParameterByName('get');
+  if (getURL == "#") {alert('Vuelve a la p谩gina anterior');}
+
+  if (getURL.length > 10) {
+  var container = document.getElementById('bitmovin-94527');
+  }
+  </script>
+  <script type="text/javascript">
+  function override(url){
+    if (url.indexOf("licensing.bitmovin.com/licensing") > -1) return "data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ==";
+    if (url.indexOf("licensing.bitmovin.com/impression") > -1) return "data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ==";
+    return url;
+  }
+  var opens = XMLHttpRequest.prototype.open;
+  XMLHttpRequest.prototype.open = function() {
+    var url = override(arguments[1]);
+    arguments[1] = url;
+    return opens.apply(this, arguments);
+  }
+  const config = {
+    key: "11d3698c-efdf-42f1-8769-54663995de2b",
+    analytics: false, cast: { enable: true },
+    playback: { 
+      autoplay: false, 
+      muted: false
+      },
+    style: {width: '100%'},
+      
+    }
+  
+  var source = {
+    
+  hls: atob(getURL),
+    title: "Reproductor | DZA SPORTS",
+    
+    //poster: ""
+  };
+  
+   
+  var player = new bitmovin.player.Player(container, config);
+      player.load(source);
+  
+  
+  
+  </script>
+  <style>body{margin:0;}
+  iframe{width:100%;height:100%;}
+  .bmpui-ui-watermark{display:none;}
+  .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker{background-color: #1487fa;}
+  .bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition, .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition{background-color: #1487fa;}
+  .bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition-marker, .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker{border-color:#1487fa;background-color:#1487fa;}
+  </style>
+  </body></html>
