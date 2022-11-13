@@ -1,50 +1,30 @@
-<html lang="es">
-<head>
-<meta name="robots" content="noindex" />
-<script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
-<script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
-<script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
-<script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
-<script src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
-<script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-<style> 
+<html>
+    <head> 
 
-.player-poster[data-poster] {
-  background-size: cover;
-}
+  <style>
 body{
-  margin:0;
-  padding:0;
+    margin: 0%;
+    background-color: black;
 }
 
-</style>
+  </style>
 </head>
-<div id="player"></div>
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+
+
+<div id="oper"></div>
+<div id="vid"></div>
 <script>
-var player = new Clappr.Player({
-        source: '//b41838.2.cdn.telefonica.com/_41838/_-_eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlkyUnVPakUyTmpjM01qTTBNRE09In0.eyJpYXQiOjE2NjgzMDA0NTgsInVpZCI6InRRTXg5ZGdGQzRLalB1S3pCRmZOVUp6ZENkTWVObW9FMzV6aW5IZHloN1RYeHhncE5talJuM2ZLWXhBTHZ2cXgifQ.dM5OsprB2lkVzBngw5Nl6Q-dSGvyjs5dk__aRfV81a34y-_w3d8Jayx2vYzKzex-trGtnYqWfDwgH0Aip0MLmA_-_/live/disk1/GolPeruHD/DASH/GolPeruHD.mpd',
-        mimeType: 'application/dash+xml',
-        height: '100%',
-        width: '100%',
-        plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl],
-        events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
-        chromecast: {
-            appId: '9DFB77C0',
-            contentType: 'video/mp4',
-        },
-        shakaConfiguration: {
-            drm: {
-            clearKeys: {
-                    'd3cf4f05ad39479595321181bcab1f0e': 'f7b71d84cc4e45d21c4ab3bc41e55967'
-                }
-            },
-            preferredAudioLanguage: 'pt-BR',
-        },
-        shakaOnBeforeLoad: function (shaka_player) {},
-        parentId: '#player'
-    });
+ player = new Clappr.Player({
+ source: "https://2200.backequip.com:8088/adfree/coqueta/playlist.m3u8?vidictid=193098128318&id=108426&pk=376507a3664022a53b3e0097f93e0e781edc0c3ad647ed16e9cc37585a4cbd7f",
+ mimeType: "application/x-mpegURL",
+ autoPlay: true, 
+ height: "100%",
+ width: "100%",
+ plugins: {"core": [LevelSelector]}, 
+ parentId: "#vid"});
 </script>
+</body>
+</html>
