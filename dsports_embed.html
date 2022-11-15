@@ -1,0 +1,49 @@
+<html lang="es">
+<head>
+
+<meta name="robots" content="noindex" />
+<style type="text/css">
+
+body {
+   margin: 0;
+   padding: 0;
+}
+</style>
+</head>
+
+
+<script src='https://content.jwplatform.com/libraries/KB5zFt7A.js'></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script> jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
+<div id="player"></div>
+<script type="text/javascript">
+
+var playerInstance = jwplayer("player");
+
+playerInstance.setup({
+
+    playlist: [{
+    //"image": "",
+        "sources": [
+            {
+                "default": false,
+                "type": "dash",
+                "file": 'https://dtvott-abc.akamaized.net/dash_live_1057/manifest.mpd',
+                "drm": {
+                    "clearkey": { "keyId":  "a7e09c6f47af57e999b789eb54d3255d", "key": "263f6db12d6f9aa72f2cc9b0ef2e26b2" }
+                },
+                "label": "0"
+            }
+        ]
+    }],
+    width: "100%",
+    height: "100%", 
+    aspectratio: "16:9",
+    autostart: true,
+    cast: {},
+    sharing: {}
+});
+
+</script>
+</html>
