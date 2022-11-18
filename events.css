@@ -1,0 +1,178 @@
+.main-event .league h5 {
+  position: absolute!important;
+  margin-top: 50px!important;
+}
+
+.live-text {
+  margin-top: 2%;
+}
+.live-text ion-icon {
+  color: red;
+}
+.main-event p {
+  color: #fff !important;
+}
+.main-event p:hover {
+  color: #fff !important;
+}
+/* FLASHING */
+
+@-webkit-keyframes flash {
+  0%,
+  100%,
+  50% {
+      opacity: 1;
+  }
+
+  25%,
+  75% {
+      opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%,
+  100%,
+  50% {
+      opacity: 1;
+  }
+
+  25%,
+  75% {
+      opacity: 0;
+  }
+}
+
+.faa-flash.animated,
+.faa-flash.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-flash {
+  -webkit-animation: flash 2s ease infinite;
+  animation: flash 2s ease infinite;
+}
+
+.faa-flash.animated.faa-fast,
+.faa-flash.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-flash.faa-fast {
+  -webkit-animation: flash 1s ease infinite;
+  animation: flash 1s ease infinite;
+}
+
+.faa-flash.animated.faa-slow,
+.faa-flash.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-flash.faa-slow {
+  -webkit-animation: flash 3s ease infinite;
+  animation: flash 3s ease infinite;
+}
+
+.main-event {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-event .league img {
+  min-width: 5%;
+  max-width: 60px;
+}
+.main-event .league .time {
+  position: absolute;
+}
+
+.main-event .channel img {
+  min-width: 5%;
+  max-width: 60px;
+}
+
+.league {
+  margin-left: 2%;
+}
+
+.league p{
+  position: absolute;
+  min-width: 80px;
+}
+
+.match {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.team img {
+  min-width: 5%;
+  max-width: 60px;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
+  height: 120px;
+}
+
+.vs {
+  margin: 0 auto;
+}
+
+.channel {
+  margin-right: 2%;
+}
+
+.match h4 {
+  margin-top: 2%;
+}
+
+.match h6 {
+  font-size: 1rem;
+}
+
+/* responsive */
+
+@media screen and (max-width: 800px) {
+  .team {
+      width: 80px;
+      font-size: 0.8rem;
+  }
+  .main-event .league img {
+      min-width: 3%;
+      max-width: 48px;
+  }
+  .team img {
+      min-width: 3%;
+      max-width: 48px;
+  }
+  .main-event .channel img {
+      min-width: 3%;
+      max-width: 48px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .team {
+      width: 80px;
+      font-size: 0.8rem;
+  }
+  .main-event .league img {
+      display: none;
+  }
+  .team img {
+      min-width: 3%;
+      max-width: 48px;
+  }
+  .main-event .channel img {
+      display: none;
+  }
+  .main-event p{
+    display: none;
+  }
+  .vs {
+    display: none;
+  }
+}
