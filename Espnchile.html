@@ -105,6 +105,17 @@
                 resize: none;
                 border: 1px solid grey;
             }
+            .button {
+  background-color: #50ff39; /* Green */
+  border: 3px solid Black;
+ 
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+  }
     </style>
     
     </head>
@@ -123,11 +134,30 @@
     <center><h2>ESPN CHILE en vivo </h2></center>
     <!-- https://cdn.chatytvgratis.net/rcntabs.php -->
         <div class="video-container">
-  <iframe width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" name="iframe" src="https://megadeportes.live/embed/repro/?r=Ly9zcGhlbnRoZXIuY2Yvc292aWV0aWNhLmh0bWw/dWMmZ2V0PUx5OWtkSFp2ZEhRdFlXSmpMbUZyWVcxaGFYcGxaQzV1WlhRdlpHRnphRjlzYVhabFh6RXhNRFV2YldGdWFXWmxjM1F1YlhCayZrZXk9WlRrM05ETTRNek0wWmpreU5UbGlOVGczT1dabVptWXlNVFl6TVdZeVl6UT0ma2V5Mj1NakJoTW1NM1pqRXdNbVprTTJVNU5tSmhZMlJoT1RCak1qUmtaak5sT1RVPSZsYW5nPTA="></iframe>
+  <iframe width="100%" height="100%" id="iframe" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" name="iframe" src="https://ibraami-001-site1.etempurl.com/playerjw.html?get=Ly9kdHZvdHQtYWJjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzExMDUvbWFuaWZlc3QubXBk&key=ZTk3NDM4MzM0ZjkyNTliNTg3OWZmZmYyMTYzMWYyYzQ=&key2=MjBhMmM3ZjEwMmZkM2U5NmJhY2RhOTBjMjRkZjNlOTU=&lang=0"></iframe>
   </div>
     <br>
     
-    <center>-</center>
+    <center><input class="button" onclick="mostrarMensaje1()" type="button" value="OP-01" />
+      <input class="button" onclick="mostrarMensaje2()" type="button" value="OP-02" /> 
+ 
+    
+      </center><br/>
+
+
+      
+    <script type="text/javascript">
+      function mostrarMensaje1() {
+    document.getElementById("iframe").src = "https://ibraami-001-site1.etempurl.com/espn4co.html"
+    
+    
+    }
+    function mostrarMensaje2() {
+    document.getElementById("iframe").src = "https://ibraami-001-site1.etempurl.com/playerjw.html?get=Ly9kdHZvdHQtYWJjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzExMDUvbWFuaWZlc3QubXBk&key=ZTk3NDM4MzM0ZjkyNTliNTg3OWZmZmYyMTYzMWYyYzQ=&key2=MjBhMmM3ZjEwMmZkM2U5NmJhY2RhOTBjMjRkZjNlOTU=&lang=0"
+    }
+    
+
+    </script>
     </div>
     <script>
     function myFunction() {
