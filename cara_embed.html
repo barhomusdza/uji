@@ -1,0 +1,185 @@
+
+<html>
+<head>
+<title>Embed</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.1/socket.io.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+
+
+<script type="text/javascript">
+var channel = "carcolhdtv";
+var hT = "39344cc61f727b0ea7ee9f533860f6209e22534208a4872beb547b231a99a40b";
+var sT = "cb23f942b6fb2a3f";
+var tmsT = "1669252026";	
+var cId = "636172636f6c68647476";
+var geO = "5045";
+var iDp = "3138312e36352e31382e313639";
+var streamLive = true;
+var liveSince = 172;
+var online_enabled = false;
+var streamActive = false;
+var streamCheck = false;
+var viewCounter = false;
+var ViewerInt;
+eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('0 1=\'2://3/4/5/6.7?8=9&e=a&b=c&d=f\';',16,16,'var|strSource|https|s01.castamp.com|live|carcolhdtv|chunklist|m3u8|h|Z0tZca0PexUZUZVd7C-9dg|1620110519|u|7542a9755e289c647ec9514fae957f26|||181_65_18_169'.split('|'),0,{}))	
+</script>
+<style>
+  body {
+  margin: 0;
+}
+  </style>
+</head>
+<div id="player"></div>
+<script>
+var player;
+
+   var playerElement = document.getElementById("player");
+
+eval(function(p,a,c,k,e,r){e=String;if(!''.replace(/^/,String)){while(c--)r[c]=k[c]||c;k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('0=0.1("2",3);',4,4,'strSource|replace|1620110519|tmsT'.split('|'),0,{}))
+
+function loadPlayer(autoPlay) {	
+player = new Clappr.Player({
+	
+  source: strSource,
+	  
+  mute: false,
+  if (autoPlay) {  autoPlay: true },
+  height: '100%',
+  width: '100%',
+  watermark: "https://www.castamp.com/amp_logo.png",
+  position: 'top-right',
+   watermarkLink: "https://www.castamp.com/channels",
+  mediacontrol: {seekbar: "#b8a48a", buttons: "#b8a48a"},
+  		 events: {
+        onError: function() { streamActive = false; },
+		onPlay: function() { streamActive = true; if (!viewCounter) { ViewerCount(); } player.core.getCurrentPlayback()._hls.on('hlsFragChanged', function(event, object) { streamActive = true; });  		},    
+		onStop: function() { streamActive = false; viewCounter = false; clearInterval(ViewerInt); }
+}		
+});
+
+
+player.attachTo(playerElement);
+
+
+player.listenTo(player.core.getCurrentContainer(), 
+                Clappr.Events.CONTAINER_STATE_BUFFERING,  
+                function() { checkLive(); })
+}	
+
+
+loadPlayer();
+
+function ViewerCount(){
+if (streamActive == true) {	
+ $.ajax({
+  url: 'https://www.castamp.com/viewers/d27979c19765e8704bacd6631cb513a4/900ddb0975f179159832873d32c94368/count/carcolhdtv.json',
+  dataType: 'json',
+  timeout: 5000,
+  success: function(data) {
+
+			if (streamCheck == false) {
+			//$( "#viewers" ).text(data.viewers + 1);	
+setTimeout((function() {
+				$(".live-info").width(120);
+				$(".live-info").replaceWith('<div class="live-info">live <span style="padding-left: 10px;text-transform:capitalize; font-size:14px; text-decoration: none;font-family: \'Courier New\';" id="viewers_embed">◎ ' + data.viewers + "</span></div>")
+			}), 1e4);
+			streamCheck = true;
+			}else{
+			//$( "#viewers" ).text(data.viewers);
+			
+				$(".live-info").width(120);
+				$(".live-info").replaceWith('<div class="live-info">live <span style="padding-left: 10px;text-transform:capitalize; font-size:14px; text-decoration: none;font-family: \'Courier New\';" id="viewers_embed">◎ ' + data.viewers + "</span></div>");
+			}
+			streamActive = false;
+			if (!viewCounter) { 
+			ViewerInt = setInterval(ViewerCount, 30000);
+			viewCounter = true; 
+			}
+
+    },
+    error: function(){
+		streamActive = false;
+    }
+ });
+ }
+}
+
+var checkInt;
+var checkAttempts = 0;
+function checkLive(){
+	
+	
+ $.ajax({
+  url: 'https://www.castamp.com/status/carcolhdtv.json',
+  dataType: 'json',
+  timeout: 5000,
+  success: function(data) {
+
+			if (data.live) {
+			if (streamLive) {
+
+			}else{
+				clearInterval(checkInt);
+				$("#player").html('<img src="https://' + window.location.hostname + '/starting.png" style="width: 100%; height: 100%" />');
+				streamLive = true;
+				setTimeout((function() {
+					$("#player").html("");
+					loadPlayer(true);
+				}), 15e3)	
+			}
+			
+			}else{
+			if (!streamLive) {
+			checkAttempts++;
+			
+			if (checkAttempts > 40) { clearInterval(checkInt); }
+			}else{
+
+				clearInterval(ViewerInt);
+				clearInterval(checkInt);
+				checkInt = setInterval(checkLive, 15000);
+				player.destroy();
+				checkAttempts = 0;
+				$("#player").html('<img src="https://' + window.location.hostname + '/offline.png" style="width: 100%; height: 100%" />');
+				streamLive = false;
+			}
+			}
+
+            
+
+    }
+ });
+
+}
+
+if (streamLive) {
+	var liveCounter = setInterval(liveTimer, 1e3)
+	streamStatus = true;
+}
+
+function liveTimer() {
+	if (streamLive) {
+		++liveSince;
+		var hour = Math.floor(liveSince / 3600);
+		var minute = Math.floor((liveSince - hour * 3600) / 60);
+		var seconds = liveSince - (hour * 3600 + minute * 60);
+		if (hour < 10) hour = "0" + hour;
+		if (minute < 10) minute = "0" + minute;
+		if (seconds < 10) seconds = "0" + seconds;
+		$("#liveSince").html(hour + ":" + minute + ":" + seconds);
+		if ($("#liveLight").is(":visible")) {
+			$("#timelive").css("visibility", "visible")
+		}
+	} else {
+		if (online_enabled == false) {
+			clearInterval(liveCounter)
+		}
+		$("#timelive").css("visibility", "hidden")
+	}
+}
+
+  </script>
+
+</body>
+</html>
