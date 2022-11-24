@@ -1,0 +1,33 @@
+
+<meta name="referrer" content="no-referrer" />
+<style>
+  body {
+    margin: 0px
+  }
+</style>
+
+<!-- clappr player -->
+<script src='https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js'></script>
+<div id="player"></div>
+<script>
+  var player = new Clappr.Player({
+    source: "https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-016/stream.mpd",
+    plugins: [LevelSelector, DashShakaPlayback], shakaConfiguration: { // 'key-id-in-hex': 'key-in-hex',
+      drm: {
+        clearKeys: {
+          "4e10006d817658f49834f90f2581f7c5": "593577e3f5dfcae421a283eecfd4e075",
+          "9b0d9d4ed3b552c4b2986c51df75f329": "d8d00c5e6c884b3a1660b1446b7e75b5",
+          "c4b7ec59fa5255c5a76b78b074bcb9ea": "5a3530d04decbebf93592855a7b7fafd",
+          "cfb5e2b73bef4f3c878f25ab86a7451f": "0d6712bf2a84edcc93d001a9613f6fec",
+          "d6229ed7c208587583d7b4ef894ad69b": "7825bf1a2e1039aa0dc5e45b5536618e"
+        }
+      }
+    },
+    autoPlay: true,
+    width: "100%",
+    height: "100%",
+    parentId: "#player",
+  });
+</script>
