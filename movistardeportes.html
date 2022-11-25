@@ -8,6 +8,7 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -118,7 +119,28 @@
     width: 115px;
   }
     </style>
+    <script>
+
+      window.onload = function(){
+          // your code here
+       
     
+    // Define the string
+    var string = '//odlestudent.org/gg.html?uc2&get=Ly9iNDE4NDEuMi5jZG4udGVsZWZvbmljYS5jb20vXzQxODQxL2xpdmUvZGlzazEvTW92aXN0YXJEZXBvcnRlcy9EQVNIL01vdmlzdGFyRGVwb3J0ZXMubXBk&key=MzNlNTdjNzEwYTQ1NGM5NmIxMjZhZDVkY2VlNzE0Y2U=&key2=Nzc3MTE2OWI3Njc4MTRhNzViNzI0NGEzZWQ2NTY2YzA=&lang=0';
+    
+    // Encode the String
+    var encodedString = btoa(string);
+    console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+    var source = "https://megadeportes.live//embed/repro/?r="+encodedString;
+    
+      var newFrameName = "hello";
+      const iframe = document.getElementById("iframe");
+      $('iframe').attr('src',source ).reload;
+    
+    
+    };
+    
+    </script>
     </head>
     
     <body>
@@ -136,7 +158,7 @@
     
         <div class="video-container">
 
-        <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="iframe"   scrolling="no" src="//endisterbish.org/gg.html?uc2&url=Ly9iNDE4NDEuMi5jZG4udGVsZWZvbmljYS5jb20vXzQxODQxL2xpdmUvZGlzazEvTW92aXN0YXJEZXBvcnRlcy9EQVNIL01vdmlzdGFyRGVwb3J0ZXMubXBk&kid=MzNlNTdjNzEwYTQ1NGM5NmIxMjZhZDVkY2VlNzE0Y2U=&k=Nzc3MTE2OWI3Njc4MTRhNzViNzI0NGEzZWQ2NTY2YzA=&lang=0" width="100%" height="100%" frameborder="0" ></iframe>
+        <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="iframe"   scrolling="no" src="//endisterbish.org/gg.html?uc2&url=" width="100%" height="100%" frameborder="0" ></iframe>
     
      </div>
     <br>
@@ -151,7 +173,7 @@
     }
     
       function mostrarMensaje2() {
-    document.getElementById("iframe").src = "//endisterbish.org/gg.html?uc2&url=Ly9iNDE4NDEuMi5jZG4udGVsZWZvbmljYS5jb20vXzQxODQxL2xpdmUvZGlzazEvTW92aXN0YXJEZXBvcnRlcy9EQVNIL01vdmlzdGFyRGVwb3J0ZXMubXBk&kid=MzNlNTdjNzEwYTQ1NGM5NmIxMjZhZDVkY2VlNzE0Y2U=&k=Nzc3MTE2OWI3Njc4MTRhNzViNzI0NGEzZWQ2NTY2YzA=&lang=0"
+    document.getElementById("iframe").src = "https://megadeportes.live//embed/repro/?r="+btoa("//odlestudent.org/gg.html?uc2&get=Ly9iNDE4NDEuMi5jZG4udGVsZWZvbmljYS5jb20vXzQxODQxL2xpdmUvZGlzazEvTW92aXN0YXJEZXBvcnRlcy9EQVNIL01vdmlzdGFyRGVwb3J0ZXMubXBk&key=MzNlNTdjNzEwYTQ1NGM5NmIxMjZhZDVkY2VlNzE0Y2U=&key2=Nzc3MTE2OWI3Njc4MTRhNzViNzI0NGEzZWQ2NTY2YzA=&lang=0")
     }
 
     
