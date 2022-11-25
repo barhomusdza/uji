@@ -8,6 +8,7 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -118,7 +119,28 @@ body {
     width: 115px;
   }
 </style>
+<script>
 
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://odlestudent.org/gg.html?uc2&get=LmN2YXR0di5jb20uYXIvbGl2ZS9jM2Vkcy9Gb3hTcG9ydHMySEQvU0FfTGl2ZV9kYXNoX2VuY18yQS9Gb3hTcG9ydHMySEQubXBk&key=Yzk4ZGRmZmM0NzBmZTQ0OWFlMWE4ZDY0OTIxMTY5NzY=&key2=NTA4NmQzNzBlODQwMDEwMjMyY2Y0NTMyYjE2ZTE5N2Y=';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+var source = "https://megadeportes.live//embed/repro/?r="+encodedString;
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 </head>
 
 <body>
@@ -138,32 +160,32 @@ body {
     <div class="video-container">
     
 
-        <iframe  id="ppp"  width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" name="iframe" src="fox2ar_embed.html"></iframe>
+        <iframe  id="iframe"  width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" name="iframe" src="https://lh3.googleusercontent.com/-_4kDOfwXdPo/Y4D6SPo2zfI/AAAAAAAAGjI/MwfO4i1GQ2EGHPt3MUsjT5LJLI8ndh6NgCNcBGAsYHQ/h120/channels4_profile.jpg"></iframe>
  
  </div>
 <br>
 <center>
-<input class="button" onclick="mostrarMensaje1()" type="button" value="OP-AR" />
+<input class="button" onclick="mostrarMensaje1()" type="button" value="OP-HD" />
+  <input class="button" onclick="mostrarMensaje2()" type="button" value="OP-HD" /> 
   <input class="button" onclick="mostrarMensaje3()" type="button" value="OP-SD" /> 
-  <input class="button" onclick="mostrarMensaje4()" type="button" value="OP-SD" /> 
   
   </center><br/>
 <script type="text/javascript">
   function mostrarMensaje1() {
-document.getElementById("ppp").src = "https://odd-views-hear-181-65-18-169.loca.lt/playerjw.html?get=LmN2YXR0di5jb20uYXIvbGl2ZS9jM2Vkcy9Gb3hTcG9ydHMySEQvU0FfTGl2ZV9kYXNoX2VuY18yQS9Gb3hTcG9ydHMySEQubXBk&key=Yzk4ZGRmZmM0NzBmZTQ0OWFlMWE4ZDY0OTIxMTY5NzY=&key2=NTA4NmQzNzBlODQwMDEwMjMyY2Y0NTMyYjE2ZTE5N2Y="
+document.getElementById("iframe").src = "https://megadeportes.live//embed/repro/?r="+btoa("https://odlestudent.org/gg.html?uc2&get=LmN2YXR0di5jb20uYXIvbGl2ZS9jM2Vkcy9Gb3hTcG9ydHMySEQvU0FfTGl2ZV9kYXNoX2VuY18yQS9Gb3hTcG9ydHMySEQubXBk&key=Yzk4ZGRmZmM0NzBmZTQ0OWFlMWE4ZDY0OTIxMTY5NzY=&key2=NTA4NmQzNzBlODQwMDEwMjMyY2Y0NTMyYjE2ZTE5N2Y=")
 }
 
 
 function mostrarMensaje2() {
-document.getElementById("ppp").src = "fox2ar_embed.html"
+document.getElementById("iframe").src = "fox2ar_embed.html"
 }
 
 function mostrarMensaje3() {
-document.getElementById("ppp").src = "https://1rowsportz.info/player/1/106"
+document.getElementById("iframe").src = "https://1rowsportz.info/player/1/106"
 }
 
 function mostrarMensaje4() {
-document.getElementById("ppp").src = "//tucanaldeportivo.com/foxsports2.php"
+document.getElementById("iframe").src = "//tucanaldeportivo.com/foxsports2.php"
 }
 </script>
 <center>-</center>

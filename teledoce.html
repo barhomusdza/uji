@@ -7,6 +7,7 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -93,7 +94,28 @@ body {
 </style>
 
 </head>
+<script>
 
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://odlestudent.org/gg.html?uc2&get=aHR0cHM6Ly9kdHZvdHQtYWJjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzEyMTUvbWFuaWZlc3QubXBk&key=ZjRjNTVlZDhmODJlNTkyNGIyMmQwMGNlMTU0YWU4NDk=&key2=ZmRlYThlZTcwMmJkNTI2MmNiNmEyOTAxZGMzN2U3YjA=';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+var source = "https://megadeportes.live//embed/repro/?r="+encodedString;
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 <body>
  
   <div class="contenedor">
@@ -110,7 +132,7 @@ body {
 
   
 
-     <iframe allow="encrypted-media" src="https://odd-views-hear-181-65-18-169.loca.lt/playerjw.html?get=aHR0cHM6Ly9kdHZvdHQtYWJjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzEyMTUvbWFuaWZlc3QubXBk&key=ZjRjNTVlZDhmODJlNTkyNGIyMmQwMGNlMTU0YWU4NDk=&key2=ZmRlYThlZTcwMmJkNTI2MmNiNmEyOTAxZGMzN2U3YjA=" width="100%" height="100%" name="iframe" id="iframe" frameborder="0" scrolling="no" style="position:absolute;" allowfullscreen=""></iframe>
+     <iframe allow="encrypted-media" src="https://lh3.googleusercontent.com/-_4kDOfwXdPo/Y4D6SPo2zfI/AAAAAAAAGjI/MwfO4i1GQ2EGHPt3MUsjT5LJLI8ndh6NgCNcBGAsYHQ/h120/channels4_profile.jpg" width="100%" height="100%" name="iframe" id="iframe" frameborder="0" scrolling="no" style="position:absolute;" allowfullscreen=""></iframe>
            
  </div>
 <br>
@@ -122,12 +144,12 @@ body {
 <script type="text/javascript">
 
 function mostrarMensaje2() {
-document.getElementById("iframe").src = "https://odd-views-hear-181-65-18-169.loca.lt/playerjw.html?get=aHR0cHM6Ly9kdHZvdHQtYWJjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzEyMTUvbWFuaWZlc3QubXBk&key=ZjRjNTVlZDhmODJlNTkyNGIyMmQwMGNlMTU0YWU4NDk=&key2=ZmRlYThlZTcwMmJkNTI2MmNiNmEyOTAxZGMzN2U3YjA="
+document.getElementById("iframe").src = "https://megadeportes.live//embed/repro/?r="+btoa("https://odlestudent.org/gg.html?uc2&get=aHR0cHM6Ly9kdHZvdHQtYWJjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzEyMTUvbWFuaWZlc3QubXBk&key=ZjRjNTVlZDhmODJlNTkyNGIyMmQwMGNlMTU0YWU4NDk=&key2=ZmRlYThlZTcwMmJkNTI2MmNiNmEyOTAxZGMzN2U3YjA=")
 }
 
 
 function mostrarMensaje3() {
-document.getElementById("iframe").src = "https://odd-views-hear-181-65-18-169.loca.lt/playerjw.html?get=LmN2YXR0di5jb20uYXIvbGl2ZS9jNGVkcy9DYW5hbDEyVVJVL1NBX0xpdmVfZGFzaF9lbmMvQ2FuYWwxMlVSVS5tcGQ=&key=ZGZkZTlkMzVkNzQzOGJmZGY2MWRhNWRmYWMwNTU3YzE=&key2=YWNiMTMzNzBjMDNhNzI1NGUyYmI5Y2M5ZDIxMjUwMTc="
+document.getElementById("iframe").src = "https://megadeportes.live//embed/repro/?r="+btoa("https://odlestudent.org/gg.html?uc2&get=LmN2YXR0di5jb20uYXIvbGl2ZS9jNGVkcy9DYW5hbDEyVVJVL1NBX0xpdmVfZGFzaF9lbmMvQ2FuYWwxMlVSVS5tcGQ=&key=ZGZkZTlkMzVkNzQzOGJmZGY2MWRhNWRmYWMwNTU3YzE=&key2=YWNiMTMzNzBjMDNhNzI1NGUyYmI5Y2M5ZDIxMjUwMTc=")
 }
 
 
