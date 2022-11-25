@@ -7,6 +7,7 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -118,7 +119,28 @@ body {
     width: 115px;
   }
 </style>
+<script>
 
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://odlestudent.org/gg.html?uc2&get=aHR0cHM6Ly8wMDY4LXZvcy5kdHZvdHQuY29tL0RBU0gvbWFuaWZlc3QubXBk&key=NGY2MmRiNjI3YmQ5M2I3MTgxNTRjYzg2MjllOTI5NzY=&key2=MDllMzc3MzlhMDkwMTQwNzM0OTA0NTEzZWUyZjRjZTM=';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+var source = "https://megadeportes.live//embed/repro/?r="+encodedString;
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 </head>
 
 <body>
@@ -133,8 +155,8 @@ body {
 <center><h2> </h2></center>
 
 <br>
-    <div class="video-container">
-      <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="https://odd-views-hear-181-65-18-169.loca.lt/playerjw.html?get=aHR0cHM6Ly8wMDY4LXZvcy5kdHZvdHQuY29tL0RBU0gvbWFuaWZlc3QubXBk&key=NGY2MmRiNjI3YmQ5M2I3MTgxNTRjYzg2MjllOTI5NzY=&key2=MDllMzc3MzlhMDkwMTQwNzM0OTA0NTEzZWUyZjRjZTM=" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe></div>
+    <div class="video-container">Loading the player...
+      <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe></div>
 <br>
 
 
