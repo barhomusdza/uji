@@ -117,7 +117,28 @@
         width: 115px;
       }
     </style>
+    <script>
+
+      window.onload = function(){
+          // your code here
+       
     
+    // Define the string
+    var string = 'https://odlestudent.org/gg.html?uc2&get=Ly9kdHZvdHQtY2JjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzEyMjkvbWFuaWZlc3QubXBk&key=OGNjYjhhZjRhODc4NTcwZDg4Nzg5MjFiODRhYmVlMTk=&key2=YTdlYmUwY2MxZGE2OWRjYzMwMGYxOWY3YjRhNjI4Yzc=';
+    
+    // Encode the String
+    var encodedString = btoa(string);
+    console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+    var source = "https://megadeportes.live//embed/repro/?r="+encodedString;
+    
+      var newFrameName = "hello";
+      const iframe = document.getElementById("iframe");
+      $('iframe').attr('src',source ).reload;
+    
+    
+    };
+    
+    </script>
     </head>
     
     <body>
@@ -133,7 +154,7 @@
     
     <br>
         <div class="video-container">Loading the player...
-            <iframe width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" name="iframe" src="https://odlestudent.org/gg.html?uc2&get=Ly9kdHZvdHQtY2JjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzEyMjkvbWFuaWZlc3QubXBk&key=OGNjYjhhZjRhODc4NTcwZDg4Nzg5MjFiODRhYmVlMTk=&key2=YTdlYmUwY2MxZGE2OWRjYzMwMGYxOWY3YjRhNjI4Yzc="></iframe>
+            <iframe width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" name="iframe" src=""></iframe>
         </div>
     <br>
     <br/>
