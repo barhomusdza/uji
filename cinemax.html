@@ -117,7 +117,28 @@ body {
     width: 115px;
   }
 </style>
+<script>
 
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://odlestudent.org/gg.html?uc2&get=aHR0cHM6Ly8xMDQ2LXZvcy5kdHZvdHQuY29tL0RBU0gvbWFuaWZlc3QubXBk&key=YTdiMDVlMzY2NzkwMzcwMGFmMzUzNTZkZDA0ZGM1NDE=&key2=NjJiNTlmMDYxODQ4NDQ1MmE3ZTczNWQxZmFmM2UzYTQ=&aut=true&lang=1';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+var source = "https://megadeportes.live//embed/repro/?r="+encodedString;
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 </head>
 
 <body>
@@ -133,7 +154,7 @@ body {
 
 <br>
     <div class="video-container">Loading the player...
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" name="iframe" src="urlkidk.html?url=Ly9lZGdlLWxpdmUxNy1zbC5jdmF0dHYuY29tLmFyL2xpdmUvYzZlZHMvQ2luZW1heC9TQV9MaXZlX2Rhc2hfZW5jXzJBL0NpbmVtYXgubXBk&kid=OTc3OTI4YTkyYjgyYmEzNzgxNzQxYTY0NzBmOGY0NWI=&k=NTFmNGU2MjgyN2MxMjhmNzIxMGI3OWExMTU4NzY2MWE=&lang=1" __idm_id__="1720321"></iframe>
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" id="iframe" src="" __idm_id__="1720321"></iframe>
     </div>
 <br>
 <br/>
