@@ -165,6 +165,7 @@ var source = "https://megadeportes.live//embed/repro/?r="+encodedString;
   <input class="button" onclick="mostrarMensaje2()" type="button" value="OP-SD" /> 
   <input class="button" onclick="mostrarMensaje3()" type="button" value="OP-HD" /> 
     <input class="button" onclick="mostrarMensaje4()" type="button" value="OP-HD" /> 
+    <input class="button" onclick="toggleFullscreen()" type="button" value="fullscreen" />
   </center><br/>
 <script>
   function mostrarMensaje1() {
@@ -194,6 +195,17 @@ function myFunction() {
   }
 }
 </script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
 <footer>
 
 
