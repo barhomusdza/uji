@@ -137,7 +137,10 @@
     </div>
     <br>
     <center><h2> Discovery Channel en VIVO</h2></center>
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
 
             <iframe allow="encrypted-media" width="100%" height="100%" src="playerbimovm3u8.html?get=Ly9pcy10dWN1bWFuLmNkbi5yY3MubmV0LmFyL2FuZXZpYS9saXZlL2xvY2FsZGlzay9EaXNjb3ZlcnlfSUQvU0FfSExTL0Rpc2NvdmVyeV9JRC5tM3U4" id="iframe" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
      </div>
@@ -201,5 +204,19 @@
     <footer>
      
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

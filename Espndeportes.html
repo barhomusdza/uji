@@ -109,7 +109,10 @@
     <center><h2>ESPN DEPORTES en vivo </h2></center>
     
     <br>
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
      <iframe id="iframe" allowfullscreen="true" scrolling="no" src="https://kqa4ksy6oeygvk8viu7udq.on.drv.tw/player/espndeportes_embed.html" width="100%" height="100%" frameborder="0"></iframe>
      </div>
         <br>
@@ -147,5 +150,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

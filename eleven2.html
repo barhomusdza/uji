@@ -134,7 +134,10 @@
     <br>
 
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
         
      <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="my_iframe"   scrolling="no" src="eleven2_embed.html" width="100%" height="100%" frameborder="0" ></iframe>
      </div>
@@ -156,5 +159,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

@@ -156,7 +156,10 @@
     <center><h2>ESPN Extra en vivo </h2></center>
     
        
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
     
 <iframe id="iframe" class="embed-responsive-item" allow="encrypted-media" frameborder="0" height="100%" width="100%" allowfullscreen="" scrolling="no" allowtransparency="" src="" name="iframe"></iframe>
      </div>
@@ -195,5 +198,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

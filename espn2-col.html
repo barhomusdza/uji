@@ -107,6 +107,17 @@
                 resize: none;
                 border: 1px solid grey;
             }
+            .button {
+  background-color: #50ff39; /* Green */
+  border: 3px solid Black;
+ 
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+  }
     </style>
     <script>
       window.onload = function(){
@@ -142,10 +153,13 @@
     </div>
     <center><h2>ESPN 2 Colombia en vivo </h2></center>
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
      
      
-         <iframe id="iframe" class="embed-responsive-item" allow="encrypted-media" frameborder="0" height="100%" width="100%" allowfullscreen="" scrolling="no" allowtransparency="" src="https://outisialtaniflo.org/gg.html?uc2&get=aHR0cHM6Ly8xMDk4LXZvcy5kdHZvdHQuY29tL0RBU0gvbWFuaWZlc3QubXBk&key=YmZlMGI0ZWE3OWQ2M2YzY2E4MzcwZjk0NjVhZDg1M2E=&key2=NmJmMGE2ZGIzNjcyZTFkMWViZTIyZTQ5NDE1NmZmNWQ=" name="iframe" __idm_id__="8953857"></iframe>
+         <iframe id="iframe" class="embed-responsive-item" allow="encrypted-media" frameborder="0" height="100%" width="100%" allowfullscreen="" scrolling="no" allowtransparency="" src="" name="iframe" __idm_id__="8953857"></iframe>
            
      </div>
     <br>
@@ -167,5 +181,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

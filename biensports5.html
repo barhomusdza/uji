@@ -122,7 +122,10 @@
     <br>
     <center><h2>BienSports 5  </h2></center>
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
     <iframe src="https://www.aflam4you.net/zremb472.php?vid=73&aflam_s=1&aflam_w=764&aflam_h=445&aflam_k=" width="764" height="415" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
      </div>
     <br>
@@ -144,5 +147,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

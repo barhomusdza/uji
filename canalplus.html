@@ -134,7 +134,10 @@
     </div>
     <center><h2>CANAL + FR en direct </h2></center>
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
  <iframe id="MiIframe" allow="autoplay *; encrypted-media *;" class="myfr " frameborder="0" marginheight="0" src="https://metamorfosis.franzkafkapr.space/repro/?r=Ly9ncmVnb3JzYW1zYS5saWZlL2VtYmVkL2ZyL2NhbmFsKy5waHA=" marginwidth="0" name="myframe" allowfullscreen=""></iframe>
  
  
@@ -175,5 +178,19 @@ document.getElementById("MiIframe").src = "https://metamorfosis.franzkafkapr.spa
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

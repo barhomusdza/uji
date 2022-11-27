@@ -133,7 +133,10 @@
     <center><h2>DAZN 1 EN VIVO </h2></center>
     
     <br>
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
    
 <iframe allow="encrypted-media" src="dazn1es_embed.html" width="100%" height="100%" name="iframe" id="iframe" frameborder="0" scrolling="no" style="position:absolute;" allowfullscreen=""></iframe>
      </div>
@@ -180,5 +183,19 @@ document.getElementById("iframe").src = "https://gregorsamsa.life/embed/es/dazn1
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>
