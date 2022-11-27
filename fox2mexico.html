@@ -133,6 +133,9 @@ body {
 </div>
 <br>
 <center><h2> FOX 2 MEXICO </h2></center>
+    <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
     <div class="video-container">Loading the player...
 <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="fox2mex1_embed.html" scrolling="no" title="Reproductor 1" alt="Reproducir" __idm_id__="1024001"></iframe></div>
 <br>
@@ -173,5 +176,18 @@ function myFunction() {
 <footer>
  
 </footer>
-</body>
-</html>
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+</body></html>
