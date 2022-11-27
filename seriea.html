@@ -125,6 +125,9 @@ body {
 <center><h2>SKY MAX </h2></center>
 
 <br>
+    <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
     <div class="video-container">Loading the player...
  <iframe webkitallowfullscreen="" allowfullscreen="" scrolling="no" class="embed-responsive-item" src="https://maxsport.one/max031.php" __idm_id__="3227649"></iframe>
  </div>
@@ -146,5 +149,18 @@ function myFunction() {
 
 
 
-</body>
-</html>
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+</body></html>

@@ -28,34 +28,31 @@ function getParameterByName(name) {
 <div id="player"></div>
 <script type="text/javascript">
 
-var playerInstance=jwplayer("player");
+var playerInstance = jwplayer("player");
 
 playerInstance.setup({
 
     playlist: [{
-    title : "Mira TNT 03 ",
-      description: "pappo",
-      image: "",
-      "sources": [
-        {
-          "default": false,
-          "type": "dash",
-          "file": 'https://1231-vos.dtvott.com/DASH/manifest.mpd',
-          "drm": {
-            "clearkey": {"keyId":"1743cd7101c73e2983ba928fbfcec307","key":"cf38d2027de3affce951afcbd583458d"}
-          },
-          "label": "0"
-        }
-      ]
+    //"image": "",
+        "sources": [
+            {
+                "default": false,
+                "type": "dash",
+                "file": 'https://1240-vos.dtvott.com/DASH/manifest.mpd',
+                "drm": {
+                    "clearkey": { "keyId":  "4d45b79d4487343589058ab49ddf8cf0", "key": "aa7f95f71a3cfe40aa59904f9285af72" }
+                },
+                "label": "0"
+            }
+        ]
     }],
     width: "100%",
-    height: "100%",
+    height: "100%", 
     aspectratio: "16:9",
-    autostart: false,
+    autostart: true,
     cast: {},
     sharing: {}
 });
-      
 
 </script>
 

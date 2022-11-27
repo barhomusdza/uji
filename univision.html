@@ -136,6 +136,9 @@ body {
 <center><h2>Univisión en VIVO </h2></center>
 
 <br>
+    <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
     <div class="video-container">Loading the player...
         <iframe allow="encrypted-media" width="100%" height="100%" src="https://v-la.mybtv.net/live/178.m3u8" id="iframe" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
 
@@ -186,5 +189,18 @@ function myFunction() {
 
 
 </footer>
-</body>
-</html>
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+</body></html>

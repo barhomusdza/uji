@@ -133,7 +133,10 @@ body {
 <center><h2>Starplus en vivo </h2></center
 
   <br>
-  <div class="video-container">Loading the player...
+  <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
 <iframe id="iframe" allow="encrypted-media" width="100%" height="100%" src="https://brucevayne.rocks/embed/mplay/star-pe.html" id="iframe" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
 </div>
 <br>
@@ -174,5 +177,18 @@ function myFunction() {
 
 
 </footer>
-</body>
-</html>
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+</body></html>
