@@ -134,7 +134,10 @@
     <br>
 
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
         
      <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="my_iframe"   scrolling="no" src="playerm3u8.html?get=https://live-ftc-na-south-2.media.starott.com/clt2/va01/starplus/event/2022/11/13/Cear_vs_Juventude_20221113_1668360340042/ctr-all-complete.m3u8&img=https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/F3B4F00BD5A87A381DA6FFE1CDDF98F7D4BCD2F773E076E466060E1028E5A232/scale?width=1920&aspectRatio=1.78&format=jpeg&key=d84301cc4005499782367bbd7eb92853&key2=f83a88112a5636f088a5bb41f462f5db" width="100%" height="100%" frameborder="0" ></iframe>
      </div>
@@ -156,5 +159,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

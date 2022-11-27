@@ -134,7 +134,10 @@
     </div>
     <center><h2>BienSports premium 1 live </h2></center>
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
           <iframe title="vivo"  id="iframe" src="https://castmax.live/embed/cax.html" name="Player" width="764" height="445" frameborder="0" scrolling="No" allowfullscreen="allowfullscreen"></iframe>
         </div>
     <br>
@@ -171,5 +174,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

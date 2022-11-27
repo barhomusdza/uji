@@ -134,7 +134,10 @@
     <br>
 
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
         
      <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="my_iframe"   scrolling="no" src="playerm3u8.html?get=https://live-ftc-na-south-2.media.starott.com/gru1/qb01/starplus/event/2022/11/13/Aucas_vs_Barcelona_SC_Fin_20221113_1668373208016/ctr-all-complete.m3u8&img=https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/40725EA8CF4F1688039DD9315D31075468445A395F576C90E7D6AC367AD3C75D/scale?width=1920&aspectRatio=1.78&format=jpeg&key=e3518b86ed684994814466e6bcbdae47&key2=4bb83b0c98b1fdc8ee44c787ad84e356" width="100%" height="100%" frameborder="0" ></iframe>
      </div>
@@ -156,5 +159,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

@@ -132,7 +132,10 @@
     <br>
 
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
         
      <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="my_iframe"   scrolling="no" src="https://megatelevisionhd.com/embed/repro/?r=Ly9tZWdhdGVsZXZpc2lvbmhkLmNvbS9lbWJlZC8/dXJsPUx5OXNhWFpsTVMxdmRIUXVhWHA2YVdkdkxuUjJMMjkxZEM5MUwyUmhjMmd2UTBGT1FVd3RNaTFJUkM5a1pXWmhkV3gwTG0xd1pBPT0ma2lkPU1UZ3lOek5rWkRBNU5EVTROekkzTm1SbE5qWXlPREV5WVRJNU9UUXdOVFU9Jms9TkdOalkySXhZVEZsTWpGaE0yUmlZelF5WW1RMFlUTTVPRGxoTmpGa1pUQT0mbGFuZz0w" width="100%" height="100%" frameborder="0" ></iframe>
      </div>
@@ -175,5 +178,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

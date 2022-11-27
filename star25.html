@@ -134,7 +134,10 @@
     <br>
 
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
         
      <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="my_iframe"   scrolling="no" src="playerm3u8.html?get=https://live-ftc-na-south-2.media.starott.com/clt2/va01/starplus/event/2022/11/10/Atltico_Goianiense_vs_Ath_20221110_1668034518015/ctr-all-complete.m3u8&img=https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/EE35338E2FB9BE4EFC6BD10A3D9A216771737F883C5CEB55779E41C60EA9D36D/scale?width=1920&aspectRatio=1.78&format=jpeg&key=2622eb400b004da0a985d81f6feee572&key2=af1d4075315232e0a0f576897f33a111" width="100%" height="100%" frameborder="0" ></iframe>
      </div>
@@ -156,5 +159,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>
