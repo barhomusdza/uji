@@ -134,7 +134,10 @@
     <br>
 
     
-        <div class="video-container">Loading the player...
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
         
      <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="my_iframe"   scrolling="no" src="playerm3u8.html?get=https://live-ftc-na-south-2.media.starott.com/clt2/va01/starplus/event/2022/11/26/Forest_Green_Rovers_vs_Al_20221126_1669469128034/ctr-all-complete.m3u8&img=https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/8A72E17ABD16008EF39DD3C94167641217C9C6801F3A8226E365E690284A5AB3/scale?width=1920&aspectRatio=1.78&format=jpeg&key=c353dd62839744a0874592ae765af6d2&key2=ac83fee24d316d5b1bd87748edf8b650" width="100%" height="100%" frameborder="0" ></iframe>
      </div>
@@ -156,5 +159,19 @@
     
     
     </footer>
-    </body>
-    </html>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>

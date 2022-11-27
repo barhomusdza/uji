@@ -136,6 +136,9 @@ body {
 <center><h2>AZTECA 7 EN VIVO POR INTERNET </h2></center>
 
 <br>
+    <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
     <div class="video-container">Loading the player...
       <iframe src="azteca7-embed.html" frameborder="0" allowfullscreen="true" scrolling="no" height="100%" width="100%"></iframe>
     </div>
@@ -158,5 +161,18 @@ function myFunction() {
 
 
 </footer>
-</body>
-</html>
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+</body></html>
