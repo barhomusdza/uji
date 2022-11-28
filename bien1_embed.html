@@ -1,184 +1,41 @@
-<html>
-<head>
-  <title>Reproductor M3U8 & MPD Player</title>
-  <style type="text/css">body{margin:0 auto;}</style>
-</head>
-<body>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
-  <script>
-  
-  var WSreloadCounter = false,
-    WSnTries = 0,
-    videoStarted = false,
-    startMuted = startMuted(),
-    mPlayer = 1,
-    manifestLoaded = false,
-    WSref = 'yyf4496w15';
 
-function errorPlaying() {
-    $(".stream-offline .counter").text(10);
-    $(".stream-offline").css("display", "table");
-    if (!WSreloadCounter) WSreloadCounter = setInterval(function () {
-        var a = $(".stream-offline .counter").text();
-        if (a > 1) {
-            a--;
-            $(".stream-offline .counter").text(a)
-        } else {
-            clearInterval(WSreloadCounter);
-            WSreloadCounter = false;
-            WSnTries++;
-            if (WSnTries < 10) {
-                WSreloadStream();
-            } else {
-                window.location.reload()
-            }
-        }
-    }, 1000)
-}
+<head><meta charset="utf-8">
+    <title>bein 1</title>
+    <style>
+    body{background:#000000;font-family:Changa,Segoe UI;font-size:16px;font-weight:400;text-align:right;color:#000;margin:0;padding:0}
+    .rlink{font-family:"Segoe UI",tahoma;color:#eee;text-align:center;display:inline-block;font-size:100%;background-color:#79001a;border-radius:5px;padding:3px 9px;text-decoration:none;position:absolute;z-index:5555;left:15px;cursor:pointer;top:40px}.rlink:after,.rlink:before{content:"";position:absolute;left:48%;top:46%;transform:translateX(-50%) translateY(-50%);width:55px;height:30px;display:block}.rlink:before{z-index:0;background:#ff00007a;animation:pulse-border 1.5s ease-out infinite;border-radius:5px}.rlink:after{z-index:1;border-radius:5px;transition:all .2s}@keyframes pulse-border{0%{transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1);opacity:1}100%{transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);opacity:0}}
+    .videos-channel{position:absolute;z-index:999;left:10px;right:10px;height:0}
+    .videos-channel .button{font-family:"Segoe UI",tahoma;color:#eee;text-align:center;display:inline-block;font-size:100%;background-color:#79001a;border-radius:5px;padding:3px 9px;text-decoration:none;position:absolute;z-index:5555;left:5px;cursor:pointer;top:75px}
+    #share_channel{position:absolute;top:-10px;z-index:9;left:-10px;border-radius:0;background:rgba(0,0,0,0.69);right:-10px;bottom:0;height:100vh;text-align:center}
+    .share-channel{position:absolute;top:50%;right:0;left:0;margin-top:-50px}
+    .share-channel_title{text-align:center;color:#fff;font-size:21px}.share-channel_title *{color:#fff}
+    .custom-btn{background:#79001a;border:0;font-size:16px;font-family:arial;padding:5px 16px;border-radius:5px;font-weight:700;margin-top:6px;color:#fff;cursor:pointer}
+    .share-channel textarea{margin-top:13px;max-width:98%;width:600px;direction:ltr;overflow:auto;font-size:14px;padding:5px;background:rgba(255,255,255,0.26);border:0;height:54px;color:#fff}
+    #tme{position:fixed;z-index:99999999;bottom:50px;right:25px;width:48px;height:48px;text-align:center;border-radius:50%;background-color:#0088cc;cursor:pointer}
+    #tme_message{position:absolute;bottom:62px;right:-10px;width:250px;padding:10px;background:white;border-radius:4px;box-shadow:0 2px 5px rgb(0 0 0);transition:opacity .5s ease-in}
+    #tme_message:after,#tme_message:before{content:'';position:absolute;bottom:-21px;right:23px;border-style:solid;height:0;width:0;border-width:10px;border-color:transparent}
+    #tme_message:after{border-top-color:#fff;bottom:-20px}
+    #tme svg{margin-top:13px}
+    #tme_message p{margin:8px 0;font-size:12px;color:#8e8e8e;text-align:right}
+    .clossalert{position:absolute;right:8px}
+    #tme_message a{margin:2px 6px;font-weight:bold;color:#FFF;background:#0088cc;border-radius:22px;display:inline-block;padding:5px;text-decoration:none}
+    .rmp-overlay-levels-area{direction:ltr}.rmp-error-text:before{font-size:17px;content:"البث غير متاح الان اضغط تحدث لاعادة التحميل";font-family:Changa,"Segoe UI";font-weight:bold}.rmp-error-text{font-size:0}.rmp-time-elapsed.rmp-color-bg:before{content:"مباشر";margin-left:5px}.rmp-i-resize-full::before{float:right;padding-right:30px}.rmp-time-elapsed.rmp-color-bg:after{content:"\2022";color:#ff0000;font-size:35px;vertical-align:middle}.rmp-quality-hd{background:#ff0000d9;border:1px solid #f00}.rmp-quality.rmp-module.rmp-color-bg,.rmp-overlay-button.rmp-color-bg,.rmp-module~.rmp-module{background:initial}button.rmp-fullscreen.rmp-button.rmp-i.rmp-i-resize-small{right:-80px}.rmp-button.rmp-quality.rmp-module.rmp-color-bg {bottom:10px;top:auto;right:130px}.rmp-button.rmp-pip.rmp-module.rmp-color-bg{bottom:10px;top:auto;right:85px}.rmp-control-bar.rmp-color-bg{background-color:#0000008a;border-radius:100px;bottom:10px;left:10px;right:10px;width:auto}.rmp-time-elapsed-text,.rmp-fullscreen .rmp-control-bar-hint,.rmp-play-pause .rmp-control-bar-hint,.rmp-quick-rewind-or-forward .rmp-control-bar-hint,.rmp-hint.rmp-color-bg,.rmp-desktop-volume-indicator.rmp-color-bg,.rmp-desktop-volume-hint.rmp-color-bg{display:none} div#rmpPlayer { position: initial; }
+    .bitmovinplayer-ad-container, .bitmovinplayer-container{direction:ltr;}.bmpui-ui-watermark,#bmpui-id-184,#bmpui-id-132{display: none; !important}#bmpui-id-185{margin:9px 20px 0 10px}.bmpui-ui-buffering-overlay{background-color:#000000b3}.notloaded .bmpui-ui-buffering-overlay-indicator{display:inline-block!important}#playerdiv .bmpui-ui-buffering-overlay .bmpui-ui-buffering-overlay-indicator{background:#fff;height:1em;margin:.5em;width:1em;border-radius:10px
+    </style>
+    </head>
 
-function startMuted() {
-    var b = /constructor/i.test(window.HTMLElement) || (function (c) {
-        return c.toString() === "[object SafariRemoteNotification]"
-    })(!window.safari || (typeof safari !== "undefined" && safari.pushNotification));
-    if (b) {
-        return true
-    }
-    if (window.chrome && getChromeVersion() >= 66) {
-        return true
-    }
-    var ff = navigator.userAgent.match(/firefox\/([0-9]{2,})/i);
-    if (ff && parseInt(ff[1]) >= 66) {
-        return true
-    }
-    var a = (navigator.userAgent.match(/Opera|OPR\//) ? true : false);
-    if (a) {
-        return true
-    }
-    return false
-}
-
-function getChromeVersion() {
-    var b = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
-    return b ? parseInt(b[2], 10) : false
-};
-
-function abd() {
-    WSreloadStream = function () {
-        return
-    };
-    if (player) player.stop();
-    $("#player").remove();
-    clearInterval(WSreloadCounter);
-} </script>
-
-<script>
-    if(typeof p2pml!="undefined") {
-        var engine = new p2pml.hlsjs.Engine({
-            segments: {
-                swarmId: "yyf4496w15",
-                forwardSegmentCount:50,
-            },
-            loader: {
-                httpUseRanges: true,
-                WaitForTracker: true,
-                WaitForTrackerCounter: 0,
-                },
-            });
-    }</script>
-    <script src="https://swarm.video/nsns.js"></script>
-<div id="player"></div>
-<script>
-
-
-
-var player;
-var hlsjsConfig = {
-    liveSyncDuration: 60,
-    maxBufferLength: 60,
-    liveMaxLatencyDuration: Infinity,
-};
-var p2p = false;
-var src = "https://darkteam.vip:25461/live/FREXCHWEI3020/23UHDJDKNWJE9/124.m3u8";
-if (typeof engine != "undefined" && typeof p2pml != "undefined") {
-    if (p2pml.hlsjs.Engine.isSupported()) {
-        p2p = true;
-        hlsjsConfig["loader"] = engine.createLoaderClass()
-    } else {
-        src = "http://duhoksport.badinan.xyz:1935/live/Duhok--Sports--HD/playlist.m3u8"
-    }
-}
-$(document).ready(function () {
-    player = new Clappr.Player({
-        source: src,
-        parentId: "#player",
-        width: "100%",
-        height: "100%",
-        playback: {
-            hlsjsConfig: hlsjsConfig,
-        },
-        autoPlay: false,
-        mute: startMuted,
-        stretching: "bestfit",
-        watermark: "",
-        position: "1",
-        watermarkLink: "",
-        events: {
-            onError: function (e) {
-                errorPlaying()
-            },
-            onPlay: function (e) {
-                setTimeout(function () {
-                    $(".stream-logo").fadeOut()
-                }, 1000);
-        
-            },
-            onPause: function (e) {
-                $(".stream-logo").fadeIn()
-            },
-            onVolumeUpdate: function (e) {
-                $("#btn-unmute").fadeOut()
-            },
-            onReady: function () {}
-        }
-    });
-    if (p2p) {
-        p2pml.hlsjs.initClapprPlayer(player)
-    }
-    setTimeout(function () {
-        player.play()
-    }, 1)
-});
-
-function WSreloadStream() {
-    $(".stream-offline").css("display", "none");
-    var newplayer = player.configure(player);
-    newplayer = new Clappr.Player(newplayer.options);
-    player.destroy();
-    player = newplayer;
-    player.mute();
-    player.play();
-    player.unmute()
-}
-
-function WSUnmute() {
-    player.unmute()
-}
-
-
-</script>
-</script>
-<script>function toggleFullscreen() {
-  let elem = document.querySelector("iframe");
-
-  if (!document.fullscreenElement) {
-    elem.requestFullscreen().catch((err) => {
-      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-    });
-  } else {
-    document.exitFullscreen();
-  }
-}</script>
-
-
-</body></html>
+    <script type="text/javascript">var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));  if (mobile) { document.write(`
+    <meta name="referrer" content="no-referrer"/><video width="100%" height="100%" referrerpolicy="strict-origin" src="https://playing.goforfreedomwme.net/live/beinsportsmax1ar_720p/index.m3u8" preload="metadata" autoplay="auto" controls=""></video>
+    `);} else{document.write(`
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/bitmovinplayer.js"><\/script>
+    <div id="playerdiv"></div>
+    <script type="text/javascript">
+    function override(url){ if (url.indexOf("licensing.bitmovin.com/licensing") > -1) return "data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ=="; if (url.indexOf("licensing.bitmovin.com/impression") > -1) return "data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ=="; return url;}
+    var opens = XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open = function() {var url = override(arguments[1]);arguments[1] = url;return opens.apply(this, arguments);}
+    var config = {key: "11d3698c-efdf-42f1-8769-54663995de2b",playback: {autoplay:true,muted: false,}};
+    var source = {'hls':'https://yasine699-frct1.streaming.media.azure.net/882aa647-515d-4db1-9656-1090ac2d7d33/output-20221127-153341-manifest.ism/manifest(format=m3u8-cmaf)'};
+    var playerContainer = document.getElementById('playerdiv');
+    var player = new bitmovin.player.Player(playerContainer, config);
+    player.load(source).then(function() {player.play();console.log();});
+    <\/script>
+    `);}</script>
