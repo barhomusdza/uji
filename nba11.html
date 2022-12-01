@@ -1,11 +1,8 @@
 
 
-
 <html>
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>ESPN4 HD</title>
-    
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="expires" content="-1" />
@@ -122,53 +119,30 @@
     </style>
     
     </head>
-    <script>
-
-      window.onload = function(){
-          // your code here
-       
     
-    // Define the string
-    var string = 'https://outisialtaniflo.org/gg.html?uc2&get=aHR0cHM6Ly9kdHZvdHQtYWJjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzExNzEvbWFuaWZlc3QubXBk&key=MDUzNTU5ZDEyMmI4NWYyYjg5MjVlZThhNjIxMjI1MDI=&key2=ZTFjY2NhYjQwMWE5ZjRjNGQ0OTI2ZWIxM2Q0ZjUzMTU=&lang=0';
-    
-    // Encode the String
-    var encodedString = btoa(string);
-    console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
-    var source = "https://megadeportes.live//embed/repro/?r="+encodedString;
-    
-      var newFrameName = "hello";
-      const iframe = document.getElementById("iframe");
-      $('iframe').attr('src',source ).reload;
-    
-    
-    };
-    
-    </script>
     <body>
      
       <div class="contenedor">
         <div class="topnav" id="myTopnav">
-     <a href="index.html" class="active">Inicio</a>
-   <a href="canales.html"> Deportes </a>
-    <a href="note.html"> Canales </a>
+            <a href="index.html" class="active">Inicio</a>
+            <a href="canales.html"> Deportes </a>
+             <a href="note.html"> Canales </a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
-    <center><h2>NBA TV </h2></center>
+    <br>
+
     
         <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
 <br>
 <br>
-    <div class="video-container">Loading the player...
-     
-     
-        <iframe allow="encrypted-media" src="" width="100%" height="100%" name="iframe" id="iframe" frameborder="0" scrolling="no" style="position:absolute;" allowfullscreen=""></iframe>
-             
+    <div class="video-container">  Loading the player...
+        
+     <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="my_iframe"   scrolling="no" src="nba11_embed.html" width="100%" height="100%" frameborder="0" ></iframe>
      </div>
     <br>
-    
-    <center>-</center>
+
     </div>
     <script>
     function myFunction() {
