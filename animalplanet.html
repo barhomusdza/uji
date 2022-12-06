@@ -80,16 +80,41 @@ body {
 .topnav .icon {
   display: none;
 }
-
+.button {
+  background-color: #50ff39; /* Green */
+  border: 3px solid Black;
+ 
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+  }
 
 </style>
-<meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="-1">
-<meta http-equiv="cache-control" content="no-store">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="timestamp">
-<title>Live</title>
+<script>
+
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://azygenthronva.org/gg.html?uc2&get=aHR0cHM6Ly9kdHZvdHQtY2JjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzEwMTIvbWFuaWZlc3QubXBk&key=MTQ5YzM3MWRmMjdhNTZhMTg4MDUyNzIwNDEzODE1OTI=&key2=NjE4Yjc1MmQzM2MzZTQ0NDIwMjE5YjVjMThiMGY3NDg=&aut=true&lang=0';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+var source = "https://megadeportes.live//embed/repro/?r="+encodedString;
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 
 </head>
 <body>
@@ -104,10 +129,30 @@ body {
     <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
 <br>
 <br>
-    <div class="video-container">Loading the player...
+    <div class="video-container">  Loading the player...
 
-        <iframe allow="encrypted-media" width="100%" height="100%" src="m3u8player.html?url=aHR0cHM6Ly9pcy10dWN1bWFuLmNkbi5yY3MubmV0LmFyL2FuZXZpYS9saXZlL2xvY2FsZGlzay9BbmltYWxfUGxhbmV0L1NBX0hMUy9BbmltYWxfUGxhbmV0Lm0zdTg=" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+        <iframe allow="encrypted-media" id="iframe" width="100%" height="100%" src="" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
         </div>
+<br>
+        <center><input class="button" onclick="mostrarMensaje2()" type="button" value="OP-01" />
+          <input class="button" onclick="mostrarMensaje1()" type="button" value="OP-02" />
+
+       
+    </center>
+    <br/>
+  
+  <script>
+    function mostrarMensaje1() {
+  document.getElementById("iframe").src = "m3u8player.html?url=aHR0cHM6Ly9pcy10dWN1bWFuLmNkbi5yY3MubmV0LmFyL2FuZXZpYS9saXZlL2xvY2FsZGlzay9BbmltYWxfUGxhbmV0L1NBX0hMUy9BbmltYWxfUGxhbmV0Lm0zdTg="
+  
+  
+  }
+  function mostrarMensaje2() {
+  document.getElementById("iframe").src = "https://megadeportes.live//embed/repro/?r="+btoa("https://azygenthronva.org/gg.html?uc2&get=aHR0cHM6Ly9kdHZvdHQtY2JjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzEwMTIvbWFuaWZlc3QubXBk&key=MTQ5YzM3MWRmMjdhNTZhMTg4MDUyNzIwNDEzODE1OTI=&key2=NjE4Yjc1MmQzM2MzZTQ0NDIwMjE5YjVjMThiMGY3NDg=&aut=true&lang=0")
+  }
+  
+</script>
+
 <script>
     function myFunction() {
       var x = document.getElementById("myTopnav");
