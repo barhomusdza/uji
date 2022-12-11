@@ -83,13 +83,33 @@ body {
 
 
 </style>
-<meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="-1">
-<meta http-equiv="cache-control" content="no-store">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="timestamp">
-<title>Live</title>
+<script>
+
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://azygenthronva.org/gg.html?uc2&get=Ly9wZWxpdmVjaGFubmVsc2Rhc2gtMy5jbGFyb3ZpZGVvLmNvbS9icGstdHYvTkFUR0VPV0lMREhEL2Rhc2hfZmsvaW5kZXgubXBk&key=M2EwNWE4ZDVhMDlmMDEyMWNjN2M3OThiNjA4Nzc5YTY=&key2=ZmUzNjc2OWYxZTFlZGE2ZjljNzU0OTZlZTMzMWRlZmQ=&lang=0';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+
+
+
+
+var source = "https://megatelevisionhd.com/embed/repro/?r="+encodedString;
+
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 
 </head>
 <body>
@@ -106,7 +126,7 @@ body {
 <br>
     <div class="video-container">Loading the player...
 
-        <iframe allow="encrypted-media" width="100%" height="100%" src="m3u8player.html?url=Ly9iYW11cy1zcGEtcm9rdS5hbWFnaS50di9wbGF5bGlzdC5tM3U4&lang=0" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+        <iframe allow="encrypted-media" width="100%" height="100%" src="" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
         </div>
 <script>
     function myFunction() {
