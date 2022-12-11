@@ -121,7 +121,33 @@ body {
 </style>
 
 </head>
+<script>
 
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://azygenthronva.org/gg.html?uc2&get=aHR0cHM6Ly8xMjE3LXZvcy5kdHZvdHQuY29tL0RBU0gvbWFuaWZlc3QubXBk&key=NTc2YjUzNjFiNjI3M2QyZmJiMTRhYWU2ZThlYjY0NmE=&key2=MWUwYzU1OTFmNTcwMTE2ZGJmOWYyMmRhMjZkMTcyMjY=&aut=false&lang=0&sid=20015';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+
+
+
+
+var source = "https://megatelevisionhd.com/embed/repro/?r="+encodedString;
+
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 <body>
  
   <div class="contenedor">
@@ -138,7 +164,7 @@ body {
 <br>
 <br>
     <div class="video-container">Loading the player...
-      <iframe width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" id="iframe" name="iframe" src="tlemundo1_embed.html"></iframe>
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" id="iframe" name="iframe" src=""></iframe>
     </div>
 <br>
 
