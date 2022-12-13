@@ -106,6 +106,17 @@
                 resize: none;
                 border: 1px solid grey;
             }
+            .button {
+  background-color: #50ff39; /* Green */
+  border: 3px solid Black;
+ 
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+  }
     </style>
     
     </head>
@@ -126,12 +137,35 @@
         <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
 <br>
 <br>
-    <div class="video-container">Loading the player...
-<iframe  src="https://www.aflam4you.net/zremb472.php?vid=68&amp;aflam_s=1&amp;aflam_w=764&amp;aflam_h=445&amp;aflam_k=" name="Player" width="764" height="445" frameborder="0" scrolling="No" allowfullscreen="allowfullscreen"></iframe>
+    <div class="video-container">  Loading the player...
+<iframe  src="https://starlive.xyz/embed.php?id=liveBeinMAX1" name="Player" width="764" height="445" frameborder="0" id="iframe" scrolling="No" allowfullscreen="allowfullscreen"></iframe>
      </div>
     <br>
+
     
-    <center>-</center>
+    
+    <center><input class="button" onclick="mostrarMensaje1()" type="button" value="OP-SD" />
+  
+     <input class="button" onclick="mostrarMensaje2()" type="button" value="OP-HD" /> 
+    
+     </center><br/>
+   <script type="text/javascript">
+   
+   
+     function mostrarMensaje1() {
+   document.getElementById("iframe").src = "https://starlive.xyz/embed.php?id=liveBeinMAX1"
+   }
+   
+     function mostrarMensaje2() {
+   document.getElementById("iframe").src = "https://www.aflam4you.net/zremb472.php?vid=68&amp;aflam_s=1&amp;aflam_w=764&amp;aflam_h=445&amp;aflam_k="
+   }
+   
+
+   
+   
+       
+   </script>
+   
     </div>
     <script>
     function myFunction() {
