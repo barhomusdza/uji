@@ -119,7 +119,28 @@ body {
     width: 115px;
   }
 </style>
+<script>
 
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://kopectroircep.org/gg.html?get=aHR0cHM6Ly9saXZlLmxsbi5sYXRhbS5oYm9tYXhjZG4uY29tL2NtYWYvbGl2ZS8yMDMxNjExL2Rhc2gvY2VuYy8yNzMyNi9tYXN0ZXIubXBk&key=MDEwMTZjNGIyOWFjYTcyYjZjZmEyZDdlNjcwNzU5MTc=&key2=ZmE3NzljZDUyMmYwZjQ4MjI4NjBiYmZmNDQ2Zjg5NjQ=';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+var source = "https://megatelevisionhd.com/embed/repro/?r="+encodedString;
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 </head>
 
 <body>
@@ -137,8 +158,8 @@ body {
     <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
 <br>
 <br>
-    <div class="video-container">Loading the player...
-      <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="https://azygenthronva.org/gg.html?uc2&get=aHR0cHM6Ly9saXZlLmxsbi5sYXRhbS5oYm9tYXhjZG4uY29tL2NtYWYvbGl2ZS8yMDMxNjExL2Rhc2gvY2VuYy8yNzMyNi9tYXN0ZXIubXBk&amp;key=MDEwMTZjNGIyOWFjYTcyYjZjZmEyZDdlNjcwNzU5MTc=&amp;key2=ZmE3NzljZDUyMmYwZjQ4MjI4NjBiYmZmNDQ2Zjg5NjQ=" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe></div>
+    <div class="video-container">  Loading the player...
+      <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe></div>
 <br>
 
 
