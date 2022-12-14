@@ -84,7 +84,28 @@ body {
 
 </style>
 
+<script>
 
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://kopectroircep.org/gg.html?get=Ly8xMjE0LXZvcy5kdHZvdHQuY29tL0RBU0gvbWFuaWZlc3QubXBk&key=ODA2ZTc2YTgzYjczMzU3YTk2ZTE0NDZhZDE1MmZmNzE=&key2=MDAyYmFiYmIxYzU4NjlhMGYyZjhmMzRiNzExNzAwYzY=';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+var source = "https://megatelevisionhd.com/embed/repro/?r="+encodedString;
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 </head>
 <body>
     <div class="contenedor">
@@ -100,7 +121,7 @@ body {
 <br>
     <div class="video-container">Loading the player...
 
-        <iframe allow="encrypted-media" width="100%" height="100%" src="https://kqa4ksy6oeygvk8viu7udq.on.drv.tw/player/playerjw.html?get=Ly8xMjE0LXZvcy5kdHZvdHQuY29tL0RBU0gvbWFuaWZlc3QubXBk&key=ODA2ZTc2YTgzYjczMzU3YTk2ZTE0NDZhZDE1MmZmNzE=&key2=MDAyYmFiYmIxYzU4NjlhMGYyZjhmMzRiNzExNzAwYzY=" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+        <iframe allow="encrypted-media" width="100%" height="100%" src="" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
         </div>
 <script>
     function myFunction() {
