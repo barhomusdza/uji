@@ -117,7 +117,28 @@
     width: 115px;
   }
     </style>
+    <script>
+
+      window.onload = function(){
+          // your code here
+       
     
+    // Define the string
+    var string = 'https://denchwaydro.nl/gg.html?get=Ly8xMjQ5LXZvcy5kdHZvdHQuY29tL0RBU0gvbWFuaWZlc3QubXBk&key=ZTAxNDBlOGM2MGQyMzYyYTk5ODJmOTcyNzZkMGUxYTQ=&key2=ZjY4MmRjYjIwYzcwNjgyNzU4NDA0MTE5MTZiNzlkODU=&lang=0';
+    
+    // Encode the String
+    var encodedString = btoa(string);
+    console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+    var source = "https://megatelevisionhd.com/embed/repro/?r="+encodedString;
+    
+      var newFrameName = "hello";
+      const iframe = document.getElementById("iframe");
+      $('iframe').attr('src',source ).reload;
+    
+    
+    };
+    
+    </script>
     </head>
     
     <body>
@@ -139,7 +160,7 @@
 <br>
     <div class="video-container">Loading the player...
         
-     <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="my_iframe"   scrolling="no" src="https://kqa4ksy6oeygvk8viu7udq.on.drv.tw/player/wilax_embed.html" width="100%" height="100%" frameborder="0" ></iframe>
+     <iframe   class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen="true" id="my_iframe"   scrolling="no" src="" width="100%" height="100%" frameborder="0" ></iframe>
      </div>
     <br>
 
