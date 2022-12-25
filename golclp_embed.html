@@ -1,43 +1,230 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
-    <head> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>janjua.tv - clappr hembedded Player</title>
+  <link rel="stylesheet" href="https://releases.flowplayer.org/7.2.6/skin/skin.css" type="text/css" media="screen, projection">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <style>
-body{
-    margin: 0%;
-    background-color: black;
-}
+  <script>
+    var isChrome = {
+        Chrome: function() {
+            return navigator.userAgent.match(/Chrome/i);
+        },
+    };
+  </script>
+  <script>
+    var browserCheck = {
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Mozilla: function() {
+           return navigator.userAgent.match(/Mozilla/i);
+        },
+      Chrome: function() {
+        return navigator.userAgent.match(/Chrome/i);
+        },
+        any: function() {
+            return (browserCheck.Opera() || browserCheck.Mozilla() || browserCheck.Chrome());
+        }
+    };
+  </script>
+  <script type="text/javascript">
+      var width = 730;
+      var height = 430;
+      var ea = "";
+      var smallAds = new Array();
+      var bigAds = new Array();
+      
+      
+  </script>
+  <style type="text/css" media="screen">
+      .player_div
+      {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: block;
+        z-index: 100;
+        background-color: black;
+      }
+      .logo_overlay
+      {
+        width: 100%;
+        position: absolute;
+        display: block;
+        z-index: 110;
+      }
+      .website_logo
+      {
+        width: 100%;
+        position: absolute;
+        display: block;
+        z-index: 110;
+        color: #cccccc;
+        text-align: left;
+      }
+      video::-webkit-media-controls-timeline {
+        display: none;
+      }
+      video::-webkit-media-controls-mute-button {
+        margin-left: auto;
+      }
+      video::-moz-media-controls-timeline {
+        display: none;
+      }
+      video::-moz-media-controls-mute-button {
+        margin-left: auto;
+      }
+      video::-webkit-media-controls-current-time-display {
+        display: none;
+      }
 
+      video::-webkit-media-controls-time-remaining-display {
+        display: none;
+      }
+      .media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button svg path {
+        fill: #006aff;
+      }
+      .media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume]
+      .drawer-icon-container[data-volume] .drawer-icon[data-volume] svg path {
+        fill: #006aff;
+      }
+      .media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume]
+      .bar-container[data-volume] .segmented-bar-element[data-volume] {
+        box-shadow: inset 2px 0 0 #006aff;
+      }
+      .media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume]
+      .bar-container[data-volume] .segmented-bar-element[data-volume].fill {
+        box-shadow: inset 2px 0 0 #006aff;
+        opacity: 1;
+      }
+      .player-poster[data-poster] .play-wrapper[data-poster] svg path {
+        fill: #006aff;
+      }
+      .spinner-three-bounce[data-spinner]>div {
+        background-color: #006aff;
+      }
   </style>
+  <script src="https://janjua.tv/resources/scripts/vp/hlsjs.0.12.4.min.js"></script>
+  <script src="https://janjua.tv/resources/scripts/vp/simplepeer_9_7_2.min.js?id=972"></script>
+  <script src="https://janjua.tv/resources/scripts/vp/lz-string.min.js?id=asda"></script>
+  <script src="https://janjua.tv/resources/scripts/clappr2.min.js"></script>
 </head>
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+<script type='text/javascript' src='https://janjua.tv/resources/scripts/newjanjua.js?id=1666695160774'></script>
 
-
-<div id="oper"></div>
-<div id="vid"></div>
-<script>
- player = new Clappr.Player({
- source: "https://2200.backequip.com:8088/adfree/profe123/playlist.m3u8?vidictid=193513587015&id=108448&pk=669a20ae65a7fe8a6ecaf3cfa824b2e89ddf66cc24c33c550d3a4e4d463c6758",
- mimeType: "application/x-mpegURL",
- autoPlay: true, 
- height: "100%",
- width: "100%",
- plugins: {"core": [LevelSelector]}, 
- parentId: "#vid"});
+<body style="margin: 0px; padding: 0px; background: #3c3c3c">
+<script type="text/javascript">
+  var _0x4482=["\x73\x61\x6E\x64\x62\x6F\x78","\x68\x61\x73\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x66\x72\x61\x6D\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x64\x61\x74\x61","\x69\x6E\x64\x65\x78\x4F\x66","\x68\x72\x65\x66","\x64\x6F\x6D\x61\x69\x6E","","\x70\x6C\x75\x67\x69\x6E\x73","\x75\x6E\x64\x65\x66\x69\x6E\x65\x64","\x6E\x61\x6D\x65\x64\x49\x74\x65\x6D","\x43\x68\x72\x6F\x6D\x65\x20\x50\x44\x46\x20\x56\x69\x65\x77\x65\x72","\x6F\x62\x6A\x65\x63\x74","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x6F\x6E\x65\x72\x72\x6F\x72","\x74\x79\x70\x65","\x61\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E\x2F\x70\x64\x66","\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x73\x74\x79\x6C\x65","\x76\x69\x73\x69\x62\x69\x6C\x69\x74\x79\x3A\x68\x69\x64\x64\x65\x6E\x3B\x77\x69\x64\x74\x68\x3A\x30\x3B\x68\x65\x69\x67\x68\x74\x3A\x30\x3B\x70\x6F\x73\x69\x74\x69\x6F\x6E\x3A\x61\x62\x73\x6F\x6C\x75\x74\x65\x3B\x74\x6F\x70\x3A\x2D\x39\x39\x70\x78\x3B","\x64\x61\x74\x61\x3A\x61\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E\x2F\x70\x64\x66\x3B\x62\x61\x73\x65\x36\x34\x2C\x4A\x56\x42\x45\x52\x69\x30\x78\x4C\x67\x30\x4B\x64\x48\x4A\x68\x61\x57\x78\x6C\x63\x6A\x77\x38\x4C\x31\x4A\x76\x62\x33\x51\x38\x50\x43\x39\x51\x59\x57\x64\x6C\x63\x7A\x77\x38\x4C\x30\x74\x70\x5A\x48\x4E\x62\x50\x44\x77\x76\x54\x57\x56\x6B\x61\x57\x46\x43\x62\x33\x68\x62\x4D\x43\x41\x77\x49\x44\x4D\x67\x4D\x31\x30\x2B\x50\x6C\x30\x2B\x50\x6A\x34\x2B\x50\x6A\x34\x3D","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x62\x6F\x64\x79","\x72\x65\x6D\x6F\x76\x65\x43\x68\x69\x6C\x64","\x70\x61\x72\x65\x6E\x74\x45\x6C\x65\x6D\x65\x6E\x74","\x2F\x72\x65\x73\x6F\x75\x72\x63\x65\x73\x2F\x65\x6D\x62\x65\x64\x62\x6C\x6F\x63\x6B\x65\x64\x2E\x68\x74\x6D"];function isSandboxed(_0x55b2x2){try{if(window[_0x4482[2]][_0x4482[1]](_0x4482[0])){_0x55b2x2();return}}catch(err){};if(location[_0x4482[5]][_0x4482[4]](_0x4482[3])!= 0&& document[_0x4482[6]]== _0x4482[7]){_0x55b2x2();return};if( typeof navigator[_0x4482[8]]!= _0x4482[9]&&  typeof navigator[_0x4482[8]][_0x4482[10]]!= _0x4482[9]&& navigator[_0x4482[8]][_0x4482[10]](_0x4482[11])!= null){var _0x55b2x3=document[_0x4482[13]](_0x4482[12]);_0x55b2x3[_0x4482[14]]= function(){_0x55b2x2();return};_0x55b2x3[_0x4482[17]](_0x4482[15],_0x4482[16]);_0x55b2x3[_0x4482[17]](_0x4482[18],_0x4482[19]);_0x55b2x3[_0x4482[17]](_0x4482[3],_0x4482[20]);document[_0x4482[22]][_0x4482[21]](_0x55b2x3);setTimeout(function(){_0x55b2x3[_0x4482[24]][_0x4482[23]](_0x55b2x3)},150)}}isSandboxed(function(_0x55b2x2){location[_0x4482[5]]= _0x4482[25]})
 </script>
-</script>
-<script>function toggleFullscreen() {
-  let elem = document.querySelector("iframe");
-
-  if (!document.fullscreenElement) {
-    elem.requestFullscreen().catch((err) => {
-      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-    });
-  } else {
-    document.exitFullscreen();
-  }
-}</script>
 
 
-</body></html>
+    
+    
+  
+      <div class="player_div" id="player_div">
+        <span>
+          <div class="logo_overlay" ><img src="" align="right"/></div>
+          <div class="website_logo" id="website_logo" style="font-size: 150%;">
+            <script>document.getElementById("website_logo").innerHTML ="" </script>
+          </div>
+          <script type="text/javascript">
+              jQuery.loadScript = function (url, callback) {
+                  jQuery.ajax({
+                      url: url,
+                      dataType: 'script',
+                      success: callback,
+                      async: true
+                  });
+              }
+              var playerElement = document.getElementById("player_div");
+              var hlsUrl;
+              var player;
+              function setupVideo() {
+                if (browserCheck.any()) {
+                  if (0 === 1) {
+                      $.loadScript("/resources/scripts/vp/vidictPeer_server_sharedcdn.min.js?id=34", function() {
+                          hlsUrl = "https://" + ea + ":8088/adfree/profe123/playlist.m3u8?id=108448&pk="
+                          var pk = "669a20ae654a7fe8a6ecaf3cfa824b2e89ddf66cc24c33c550d3a4e4d463c6758"
+                          hlsUrl = hlsUrl + enableVideo(pk);
+                          player = new Clappr.Player({
+                              playback: {
+                                hlsjsConfig: { fLoader: vidictLoader, liveSyncDurationCount: 8, maxBufferLength: 80 }
+                              },
+                              source: hlsUrl,
+                              disableErrorScreen: true, // Disable the internal error screen plugin
+                              mute: true,
+                              autoPlay: true,
+                              height: "100%",
+                              width: "100%",
+                              events: {
+                                onError: function(e) {
+                                  setTimeout(function() { player.configure(player.options); }, 10000);
+                                }
+                              }
+                          });
+                          player.attachTo(playerElement);
+                      });
+                  } else {
+                    hlsUrl = "https://" + ea + ":8088/adfree/profe123/playlist.m3u8?id=108448&pk="
+                    var pk = "669a20ae654a7fe8a6ecaf3cfa824b2e89ddf66cc24c33c550d3a4e4d463c6758"
+                    hlsUrl = hlsUrl + enableVideo("669a20ae654a7fe8a6ecaf3cfa824b2e89ddf66cc24c33c550d3a4e4d463c6758");
+                    player = new Clappr.Player({
+                        source: hlsUrl,
+            disableErrorScreen: true, // Disable the internal error screen plugin
+            mute: true,
+            autoPlay: true,
+            height: "100%",
+            width: "100%",
+            events: {
+            onError: function(e) {
+              setTimeout(function() { player.configure(player.options); }, 10000);
+            }
+            }
+                    });
+                    player.attachTo(playerElement);
+                  }
+                } else {
+                  hlsUrl = "https://" + ea + ":8088/adfree/profe123/playlist.m3u8?id=108448&pk="
+                  var pk = "669a20ae654a7fe8a6ecaf3cfa824b2e89ddf66cc24c33c550d3a4e4d463c6758"
+                  hlsUrl = hlsUrl + enableVideo("669a20ae654a7fe8a6ecaf3cfa824b2e89ddf66cc24c33c550d3a4e4d463c6758");
+                  player = new Clappr.Player({
+                      source: hlsUrl,
+          disableErrorScreen: true, // Disable the internal error screen plugin
+          mute: true,
+          autoPlay: true,
+          height: "100%",
+          width: "100%",
+          events: {
+          onError: function(e) {
+            setTimeout(function() { player.configure(player.options); }, 10000);
+          }
+          }
+                  });
+                  player.attachTo(playerElement);
+                }
+              }
+          </script>
+          
+            <script type="text/javascript">
+              $.ajax({url: "https://www.tvportremote.com/loadbalancer?108448",
+                dataType: "text",
+                type: "GET",
+                success: function(data) {
+                    ea = data.split('=')[1];
+                    setupVideo();
+                }
+              });
+            </script>
+          
+          
+        </span>
+      </div>
+    
+  
+</body>
+</html>
