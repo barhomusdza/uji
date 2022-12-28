@@ -127,20 +127,42 @@
       <div class="contenedor">
         <div class="topnav" id="myTopnav">
             <a href="index.html" class="active">Inicio</a>
-        <a href="canales.html"> Deportes </a>
+            <a href="canales.html"> Deportes </a>
+             <a href="note.html"> Canales </a>
     
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
-    <center><h2> v sport Exttra </h2> </center>
+    <center><h2> </h2> </center>
     <br>
         <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
 <br>
 <br>
-    <div class="video-container">Loading the player...
-       <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="https://megatelevisionhd.com/embed/repro/?r=Ly9ibGV0Y2hlYW50YS5tYWtldXAvZW1iZWQvc2UvdnNwb3J0ZXh0cmEucGhw" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe>
-        </div>
+<script type="text/javascript">
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+     id = getParameterByName('p');
+    if(getParameterByName('embed')){
+       embed = getParameterByName('embed');
+    }else{
+       if(getParameterByName('r')){
+           embed = getParameterByName('r');
+        }else{
+           embed = false;
+    }  
+    }
+
+ </script> 
+    <div class="video-container">  Loading the player...
+        <script type="text/javascript">
+            if (embed) {document.write('<iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="'+atob(embed)+'" scrolling="no" frameBorder="0" title="Reproductor 1" alt="Reproducir" allowfullscreen></iframe>');}else{document.write('<img class="embed-responsive-item" src="https://pbs.twimg.com/media/DjY2G6tV4AA5-0p.jpg" width="100%">')}
+                </script>
+</div></div>
     <br>
     <br/>
     
