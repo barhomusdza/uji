@@ -118,7 +118,33 @@ body {
     width: 115px;
   }
 </style>
+<script>
 
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = 'https://ztspdfrzh1hnzekpy0j0hw.on.drv.tw/player/playerjw.html?get=aHR0cHM6Ly9jZC1zdHJlYW0tbGl2ZS50ZWxlbm9yY2RuLm5ldC9jZGdvL2NkX3RzYXRfdHYyX3Nwb3J0X3hfbGl2ZS9jZF90c2F0X3R2Ml9zcG9ydF94X2xpdmUuaXNtbC9wbGF5bGlzdC5tcGQ=&key=YTE0NDdjZWNlZjNhNGU4MzlkNTljMWY5OTRlYWYyYzY=&key2=ODZhMzc2Mjg4NDk2YTBjMzJlMTE3OGU0MjEzOWNlNjY=&lang=1';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+
+
+
+
+var source = "https://megatelevisionhd.com/embed/repro/?r="+encodedString;
+
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 </head>
 
 <body>
@@ -139,7 +165,7 @@ body {
 <br>
 <br>
     <div class="video-container">Loading the player...
-        <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="tv2sportsxdk_embed.html" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe><br>
+        <iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe><br>
 
 
 </div>
