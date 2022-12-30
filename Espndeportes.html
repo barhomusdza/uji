@@ -93,7 +93,33 @@
   }
   
     </style>
+     <script>
+
+      window.onload = function(){
+          // your code here
+       
     
+    // Define the string
+    var string = 'https://gregorsamsa.life/embed/us/espndeportes.php';
+    
+    // Encode the String
+    var encodedString = btoa(string);
+    console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+    
+    
+    
+    
+    var source = "https://megatelevisionhd.com/embed/repro/?r="+encodedString;
+    
+    
+      var newFrameName = "hello";
+      const iframe = document.getElementById("iframe");
+      $('iframe').attr('src',source ).reload;
+    
+    
+    };
+    
+    </script>
     </head>
     
     <body>
@@ -112,8 +138,9 @@
         <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
 <br>
 <br>
-    <div class="video-container">Loading the player...
-     <iframe id="iframe" allowfullscreen="true" scrolling="no" src="https://kqa4ksy6oeygvk8viu7udq.on.drv.tw/player/espndeportes_embed.html" width="100%" height="100%" frameborder="0"></iframe>
+    <div class="video-container">    Loading the player...
+      <iframe id="iframe" class="embed-responsive-item" allow="encrypted-media" frameborder="0" height="100%" width="100%" allowfullscreen="" scrolling="no" allowtransparency="" src="" name="iframe" ></iframe>
+ 
      </div>
         <br>
         <center><input class="button" onclick="mostrarMensaje1()" type="button" value="OP-SD" />
@@ -130,7 +157,7 @@
         
         }
         function mostrarMensaje2() {
-        document.getElementById("iframe").src = "https://kqa4ksy6oeygvk8viu7udq.on.drv.tw/player/espndeportes_embed.html"
+        document.getElementById("iframe").src = "https://megatelevisionhd.com/embed/repro/?r="+btoa("https://gregorsamsa.life/embed/us/espndeportes.php")
         }
         
   </script>
