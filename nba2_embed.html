@@ -12,32 +12,37 @@ body{
 <body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
-
+<script type="text/javascript" async="" src="https://www.visariomedia.com/wordcloud2.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" async="" src="https://d13k7prax1yi04.cloudfront.net/jquery.json2html.min.js" crossorigin="anonymous"></script>
 
 <div id="oper"></div>
 <div id="vid"></div>
 <script>
- player = new Clappr.Player({
- source: "https://4disnaleadven.s3.us-west-2.amazonaws.com/origin2.m3u8",
- mimeType: "application/x-mpegURL",
- autoPlay: true, 
- height: "100%",
- width: "100%",
- plugins: {"core": [LevelSelector]}, 
- parentId: "#vid"});
-</script>
-</script>
-<script>function toggleFullscreen() {
-  let elem = document.querySelector("iframe");
+window.disableP2pEngineIOSAutoInit = true;
+var p2pConfig = {live: true, announceLocation: 'us', p2pEnabled: true, useHttpRange: true , logLevel: 'error' }
 
-  if (!document.fullscreenElement) {
-    elem.requestFullscreen().catch((err) => {
-      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-    });
-  } else {
-    document.exitFullscreen();
-  }
-}</script>
+
+      var playerElement = document.getElementById("vid");
+       var player = new Clappr.Player(
+        {
+          source: "https://epafeeddeobreach0.s3.us-east-2.amazonaws.com/raptors2.m3u8",
+          width: '100%',
+          height: '100%',
+          autoPlay: true,
+          mute:true,
+          mediacontrol: {buttons: "#FF0000" , seekbar: '#000000'},
+           mimeType: "application/x-mpegURL",
+       
+            playback: {
+                hlsjsConfig: {maxBufferSize: 0, maxBufferLength: 8,liveSyncDurationCount:10,
+                    p2pConfig: {logLevel: 'error',live: true,announceLocation: 'us',
+					 
+				    	p2pEnabled: true,useHttpRange: true,waitForPeer: true,
+                     //waitForPeerTimeout: 4.5,
+                    }}}});
+                player.attachTo(playerElement);
+                
+</script>
 
 
 </body></html>
