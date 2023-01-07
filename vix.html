@@ -1,0 +1,222 @@
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TV PUBLICA</title>
+
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<style>
+body {
+  margin: 0;
+   background: #ececec;
+  font-family: 'arial', sans serif;
+}
+.contenedor {
+  background: #fafafa;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px 10px;
+  text-align: justify;
+}
+
+.contenedor img {
+  width: 100%;
+}
+
+@media (max-width:600px)  { 
+  .contenedor {
+    width: 90%;
+  }
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 15px;
+    height: 0;
+     overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #68C420;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.codembed {
+            float: left;
+            width: 100%;
+            height: auto;
+        }
+        .commenter {
+            float: left;
+        }
+        .commenter img {
+            width: 35px;
+            height: 35px;
+        }
+        .comment-text-area {
+            float: left;
+            width: 100%;
+            height: auto;
+        }
+
+        .textinput {
+            float: left;
+            width: 100%;
+            min-height: 30px;
+            outline: none;
+            resize: none;
+            border: 1px solid grey;
+        } 
+        
+        .button {
+  background-color: #50ff39; /* Green */
+  border: 3px solid Black;
+ 
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+  }
+</style>
+<script>
+
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = '//vercomofutbol.xyz/embed/vix.php?img=https://images.vix.com/prd/league/card/6216870feb81d20ac0c820e9/50a06a8d5313124eae1adc7bd7f1de47?tr=w-1200,h-675:oi-/prd/team-logo/62d8456485da1672ca688d3d/d797dc3ffdd191a48ebd97fe8b7cab77,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-/prd/team-logo/62d846f19e88d2388c61ae4d/aabc4b0839a516aa733607f8d3840d9b,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-1440,h-810?tr=w-1440,h-810,q-80?tr=w-400,h-225,q-80&w=1920';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+var source = "https://megatelevisionhd.com/embed/repro/?r="+encodedString;
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
+</head>
+
+<body>
+ 
+  <div class="contenedor">
+    <div class="topnav" id="myTopnav">
+ <a href="index.html" class="active">Inicio</a>
+   <a href="canales.html"> Deportes </a>
+    <a href="note.html"> Canales </a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<center><h2>Afizzionados EN VIVO POR INTERNET </h2></center>
+
+<br>
+    <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">  Loading the player...
+  
+      <iframe width="100%" id="iframe" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay *; encrypted-media *;" name="iframe" src=""></iframe>
+    </div>
+<br>
+<!--
+<center><input class="button" onclick="mostrarMensaje1()" type="button" value="OP-01" />
+  <input class="button" onclick="mostrarMensaje2()" type="button" value="OP-02" />
+ 
+     
+  </center><br/>-->
+
+<script type="text/javascript">
+  function mostrarMensaje1() {
+document.getElementById("iframe").src = "afizzionadosjw_embed.html"
+
+
+}
+function mostrarMensaje2() {
+document.getElementById("iframe").src = "https://megatelevisionhd.com/embed/repro/?r="+btoa("https://bialthma.forumotion.com/h1-gg-html?get=Ly9jaGFubmVsLWFmaXp6aW9uYWRvcy1jZG4uYmxpbS5jb20vbWFuaWZlc3QubXBk&key=NGFlMTBjMjM1N2UyNTBlMDg4YmI4YTVhYjA0NGRkNTA=&key2=ZTdmNDdlMmI5NDhlOTIyMmNmNGQyNGI1MTg4MWVjMDQ=&lang=0")
+}
+
+
+
+
+
+
+</script>
+</div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<footer>
+
+
+
+</footer>
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+</body></html>
