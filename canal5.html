@@ -93,13 +93,28 @@ body {
   }
 
 </style>
-<meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="-1">
-<meta http-equiv="cache-control" content="no-store">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="timestamp">
-<title>Live</title>
+<script>
+
+  window.onload = function(){
+      // your code here
+   
+
+// Define the string
+var string = '//megatelevisionhd.com/embed/?url=Ly9saXZlMi1vdHQuaXp6aWdvLnR2L291dC91L2Rhc2gvQ0FOQUwtNS1IRC9kZWZhdWx0Lm1wZA==&kid=NTc4Zjc3YzJlMGZiN2IzMWIxNjc2Yjc1YjU3ZmU5MjI=&k=NmU1ZWUyNjZiMTEyZTU4YTBlMjdlNDM4NGIwM2VkNzY=&lang=0';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+var source = "https://megatelevisionhd.com/embed/repro/?r="+encodedString;
+
+  var newFrameName = "hello";
+  const iframe = document.getElementById("iframe");
+  $('iframe').attr('src',source ).reload;
+
+
+};
+
+</script>
 
 </head>
 <body>
@@ -117,7 +132,7 @@ body {
 <br>
     <div class="video-container">Loading the player...
 
-        <iframe allow="encrypted-media" id="iframe" width="100%" height="100%" src="playerjw.html?get=Ly9saXZlMi1vdHQuaXp6aWdvLnR2L291dC91L2Rhc2gvQ0FOQUwtNS1IRC9kZWZhdWx0Lm1wZA==&k1=NTc4Zjc3YzJlMGZiN2IzMWIxNjc2Yjc1YjU3ZmU5MjI=&k2=NmU1ZWUyNjZiMTEyZTU4YTBlMjdlNDM4NGIwM2VkNzY=&lang=0" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+        <iframe allow="encrypted-media" id="iframe" width="100%" height="100%" src="" name="iframe" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
         </div>
         <br>
         <center><input class="button" onclick="mostrarMensaje2()" type="button" value="OP-01" />
@@ -134,7 +149,7 @@ body {
         
         }
         function mostrarMensaje2() {
-        document.getElementById("iframe").src = "playerjw.html?get=Ly9saXZlMi1vdHQuaXp6aWdvLnR2L291dC91L2Rhc2gvQ0FOQUwtNS1IRC9kZWZhdWx0Lm1wZA==&k1=NTc4Zjc3YzJlMGZiN2IzMWIxNjc2Yjc1YjU3ZmU5MjI=&k2=NmU1ZWUyNjZiMTEyZTU4YTBlMjdlNDM4NGIwM2VkNzY=&lang=0"
+        document.getElementById("iframe").src = "https://megatelevisionhd.com/embed/repro/?r="+btoa("//megatelevisionhd.com/embed/?url=Ly9saXZlMi1vdHQuaXp6aWdvLnR2L291dC91L2Rhc2gvQ0FOQUwtNS1IRC9kZWZhdWx0Lm1wZA==&kid=NTc4Zjc3YzJlMGZiN2IzMWIxNjc2Yjc1YjU3ZmU5MjI=&k=NmU1ZWUyNjZiMTEyZTU4YTBlMjdlNDM4NGIwM2VkNzY=&lang=0")
         }
         
   </script>
