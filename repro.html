@@ -1,20 +1,200 @@
 
-<meta charset="UTF-8">
-<meta content="max-age=200" http-equiv="Cache-Control">
-<meta content="noindex,nofollow" name="robots">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<style>
+
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ESPN 3 HD</title>
+    
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <style>
     body {
-        background-color: #000;
-        margin: 0px;
-        padding: 0px;
+      margin: 0;
+       background: #ececec;
+      font-family: 'arial', sans serif;
     }
-</style>
-
-<head>
-
-</head>
-
+    .contenedor {
+      background: #fafafa;
+      width: 50%;
+      margin: 0 auto;
+      padding: 10px 10px;
+      text-align: justify;
+    }
+    
+    .contenedor img {
+      width: 100%;
+    }
+    
+    @media (max-width:600px)  { 
+      .contenedor {
+        width: 90%;
+      }
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 15px;
+        height: 0;
+         overflow: hidden;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #68C420;
+      color: white;
+    }
+    
+    .topnav .icon {
+      display: none;
+    }
+    
+    .codembed {
+                float: left;
+                width: 100%;
+                height: auto;
+            }
+            .commenter {
+                float: left;
+            }
+            .commenter img {
+                width: 35px;
+                height: 35px;
+            }
+            .comment-text-area {
+                float: left;
+                width: 100%;
+                height: auto;
+            }
+    
+            .textinput {
+                float: left;
+                width: 100%;
+                min-height: 30px;
+                outline: none;
+                resize: none;
+                border: 1px solid grey;
+            }
+            .button {
+      background-color: #50ff39; /* Green */
+      border: 3px solid Black;
+     
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+        font-weight: bold;
+        width: 115px;
+      }
+    </style>
+    
+    </head>
+    
+    <body>
+     
+      <div class="contenedor">
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="canales.html"> Deportes </a>
+             <a href="note.html"> Canales </a>
+    
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <center><h2> </h2> </center>
+    <br>
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
 <script type="text/javascript">
-   var _0xd697=["\x5C\x5D","\x72\x65\x70\x6C\x61\x63\x65","\x5C\x5B","\x5B\x5C\x3F\x26\x5D","\x3D\x28\x5B\x5E\x26\x23\x5D\x2A\x29","\x73\x65\x61\x72\x63\x68","\x65\x78\x65\x63","","\x20","\x70","\x65\x6D\x62\x65\x64","\x72","\x3C\x69\x66\x72\x61\x6D\x65\x20\x61\x6C\x6C\x6F\x77\x3D\x22\x65\x6E\x63\x72\x79\x70\x74\x65\x64\x2D\x6D\x65\x64\x69\x61\x22\x20\x73\x72\x63\x3D\x22","\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x30\x30\x25\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x30\x30\x25\x22\x20\x6E\x61\x6D\x65\x3D\x22\x69\x66\x72\x61\x6D\x65\x22\x20\x69\x64\x3D\x22\x69\x66\x72\x61\x6D\x65\x22\x20\x66\x72\x61\x6D\x65\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x73\x63\x72\x6F\x6C\x6C\x69\x6E\x67\x3D\x22\x6E\x6F\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x70\x6F\x73\x69\x74\x69\x6F\x6E\x3A\x61\x62\x73\x6F\x6C\x75\x74\x65\x3B\x22\x20\x61\x6C\x6C\x6F\x77\x66\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x3D\x22\x22\x3E\x3C\x2F\x69\x66\x72\x61\x6D\x65\x3E","\x77\x72\x69\x74\x65","\x3C\x69\x6D\x67\x20\x63\x6C\x61\x73\x73\x3D\x22\x65\x6D\x62\x65\x64\x2D\x72\x65\x73\x70\x6F\x6E\x73\x69\x76\x65\x2D\x69\x74\x65\x6D\x22\x20\x73\x72\x63\x3D\x22\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x30\x30\x25\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x30\x30\x25\x22\x3E"];function getParameterByName(_0x6489x2){_0x6489x2= _0x6489x2[_0xd697[1]](/[\[]/,_0xd697[2])[_0xd697[1]](/[\]]/,_0xd697[0]);var _0x6489x3= new RegExp(_0xd697[3]+ _0x6489x2+ _0xd697[4]),_0x6489x4=_0x6489x3[_0xd697[6]](location[_0xd697[5]]);return _0x6489x4=== null?_0xd697[7]:decodeURIComponent(_0x6489x4[1][_0xd697[1]](/\+/g,_0xd697[8]))}id= getParameterByName(_0xd697[9]);if(getParameterByName(_0xd697[10])){embed= getParameterByName(_0xd697[10])}else {if(getParameterByName(_0xd697[11])){embed= getParameterByName(_0xd697[11])}else {embed= false}};if(embed){document[_0xd697[14]](_0xd697[12]+ atob(embed)+ _0xd697[13])}else {document[_0xd697[14]](_0xd697[15])}
-</script>
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+     id = getParameterByName('p');
+    if(getParameterByName('embed')){
+       embed = getParameterByName('embed');
+    }else{
+       if(getParameterByName('r')){
+           embed = getParameterByName('r');
+        }else{
+           embed = false;
+    }  
+    }
+
+ </script> 
+    <div class="video-container">   Loading the player...
+        <script type="text/javascript">
+            if (embed) {document.write('<iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="'+atob(embed)+'" scrolling="no" frameBorder="0" title="Reproductor 1" alt="Reproducir" allowfullscreen></iframe>');}else{document.write('<img class="embed-responsive-item" src="https://pbs.twimg.com/media/DjY2G6tV4AA5-0p.jpg" width="100%">')}
+                </script>
+</div></div>
+    <br>
+    <br/>
+    
+    </div>
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    <footer>
+
+    
+    
+    </footer>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>
