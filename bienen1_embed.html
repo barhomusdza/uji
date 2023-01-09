@@ -1,185 +1,55 @@
 
 <html>
-<head>
-  <title>Reproductor M3U8 & MPD Player</title>
-  <style type="text/css">body{margin:0 auto;}</style>
-</head>
-<body>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
-  <script>
-  
-  var WSreloadCounter = false,
-    WSnTries = 0,
-    videoStarted = false,
-    startMuted = startMuted(),
-    mPlayer = 1,
-    manifestLoaded = false,
-    WSref = 'yyf4496w15';
+	<head>
+		
+		<title>Bein Sports Opcion en</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>	
+<meta http-equiv="Content-Language" content="es" />	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
 
-function errorPlaying() {
-    $(".stream-offline .counter").text(10);
-    $(".stream-offline").css("display", "table");
-    if (!WSreloadCounter) WSreloadCounter = setInterval(function () {
-        var a = $(".stream-offline .counter").text();
-        if (a > 1) {
-            a--;
-            $(".stream-offline .counter").text(a)
-        } else {
-            clearInterval(WSreloadCounter);
-            WSreloadCounter = false;
-            WSnTries++;
-            if (WSnTries < 10) {
-                WSreloadStream();
-            } else {
-                window.location.reload()
-            }
-        }
-    }, 1000)
-}
 
-function startMuted() {
-    var b = /constructor/i.test(window.HTMLElement) || (function (c) {
-        return c.toString() === "[object SafariRemoteNotification]"
-    })(!window.safari || (typeof safari !== "undefined" && safari.pushNotification));
-    if (b) {
-        return true
-    }
-    if (window.chrome && getChromeVersion() >= 66) {
-        return true
-    }
-    var ff = navigator.userAgent.match(/firefox\/([0-9]{2,})/i);
-    if (ff && parseInt(ff[1]) >= 66) {
-        return true
-    }
-    var a = (navigator.userAgent.match(/Opera|OPR\//) ? true : false);
-    if (a) {
-        return true
-    }
-    return false
-}
+	</head>
 
-function getChromeVersion() {
-    var b = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
-    return b ? parseInt(b[2], 10) : false
-};
-
-function abd() {
-    WSreloadStream = function () {
-        return
-    };
-    if (player) player.stop();
-    $("#player").remove();
-    clearInterval(WSreloadCounter);
-} </script>
-
-<script>
-    if(typeof p2pml!="undefined") {
-        var engine = new p2pml.hlsjs.Engine({
-            segments: {
-                swarmId: "yyf4496w15",
-                forwardSegmentCount:50,
-            },
-            loader: {
-                httpUseRanges: true,
-                WaitForTracker: true,
-                WaitForTrackerCounter: 0,
-                },
-            });
-    }</script>
-    <script src="https://swarm.video/nsns.js"></script>
+<body  style="padding: 0px; margin:0px;">
+<script src="//ssl.p.jwpcdn.com/player/v/8.21.0/jwplayer.js"></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+</script>
 <div id="player"></div>
 <script>
 
+    var playerInstance = jwplayer("player");
 
+    playerInstance.setup({
 
-var player;
-var hlsjsConfig = {
-    liveSyncDuration: 60,
-    maxBufferLength: 60,
-    liveMaxLatencyDuration: Infinity,
-};
-var p2p = false;
-var src = "https://ms1.quest123.top:8088/live/socolivepro11014/playlist.m3u8?vidictid=19248131580&id=116327&pk=59f2b6cf558f00338d316cc89de2c5fecfa954bd702c0f67c81be7d890ddcfcdc2d893d29f2fbcfe433f9518f2c10672ff5d940f6e2ac4b25e29fc751ab8c51a";
-if (typeof engine != "undefined" && typeof p2pml != "undefined") {
-    if (p2pml.hlsjs.Engine.isSupported()) {
-        p2p = true;
-        hlsjsConfig["loader"] = engine.createLoaderClass()
-    } else {
-        src = "https://ms1.quest123.top:8088/live/socolivepro11014/playlist.m3u8?vidictid=19248131580&id=116327&pk=59f2b6cf558f00338d316cc89de2c5fecfa954bd702c0f67c81be7d890ddcfcdc2d893d29f2fbcfe433f9518f2c10672ff5d940f6e2ac4b25e29fc751ab8c51a"
-    }
-}
-$(document).ready(function () {
-    player = new Clappr.Player({
-        source: src,
-        parentId: "#player",
+        playlist: [{
+            "title": "beIN Sports",
+            "sources": [
+                {
+                    "default": false,
+                    "type": "dash",
+                    "file": 'https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-039/stream.mpd',
+                    "drm": {
+                        "clearkey": { "keyId": "cfb5e2b73bef4f3c878f25ab86a7451f", "key": "0d6712bf2a84edcc93d001a9613f6fec" }
+                    },
+                    "label": "0"
+                }
+            ]
+        }],
         width: "100%",
         height: "100%",
-        playback: {
-            hlsjsConfig: hlsjsConfig,
-        },
-        autoPlay: false,
-        mute: startMuted,
-        stretching: "bestfit",
-        watermark: "",
-        position: "1",
-        watermarkLink: "",
-        events: {
-            onError: function (e) {
-                errorPlaying()
-            },
-            onPlay: function (e) {
-                setTimeout(function () {
-                    $(".stream-logo").fadeOut()
-                }, 1000);
-        
-            },
-            onPause: function (e) {
-                $(".stream-logo").fadeIn()
-            },
-            onVolumeUpdate: function (e) {
-                $("#btn-unmute").fadeOut()
-            },
-            onReady: function () {}
-        }
+        aspectratio: "16:9",
+autostart: true,
+			 logo: {
+ 					 file: '',
+ 					 link: 'https://bahiadeportes.com/',
+  						position: 'top-right'
+  					},
+			cast:{},
+			sharing: {}
     });
-    if (p2p) {
-        p2pml.hlsjs.initClapprPlayer(player)
-    }
-    setTimeout(function () {
-        player.play()
-    }, 1)
-});
-
-function WSreloadStream() {
-    $(".stream-offline").css("display", "none");
-    var newplayer = player.configure(player);
-    newplayer = new Clappr.Player(newplayer.options);
-    player.destroy();
-    player = newplayer;
-    player.mute();
-    player.play();
-    player.unmute()
-}
-
-function WSUnmute() {
-    player.unmute()
-}
-
-
 </script>
-</script>
-<script>function toggleFullscreen() {
-  let elem = document.querySelector("iframe");
+      
 
-  if (!document.fullscreenElement) {
-    elem.requestFullscreen().catch((err) => {
-      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-    });
-  } else {
-    document.exitFullscreen();
-  }
-}</script>
+<body>
 
-
-</body></html>
+</html>
