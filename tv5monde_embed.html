@@ -1,52 +1,43 @@
-<html lang="es">
 <head>
-     
-  
-<meta name="robots" content="noindex" />
-<style type="text/css">
-
-body {
-   margin: 0;
-   padding: 0;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
+<body>
+  <script src="https://jwpsrv.com/library/FfMxTl3oEeSEiiIACxmInQ.js"></script>   
+       <div id="aRzklaXf">Loading the player...</div>
+       <script type="text/javascript">
+       var playerInstance = jwplayer("aRzklaXf");
+       playerInstance.setup({
+        "file": "https://ott.tv5monde.com/Content/HLS/Live/channel(info)/02.m3u8",
+        "height":"100%",
+        "width":"100%",
+        stretching: "bestfit",
+        "image": "#",
+        "mediaid": "player",
+        "mute": false,
+        "autostart": true,
+            "cast": {
+                "appid": "player",
+                "logo": "https://i.ibb.co/Tgk2YrC/Logo.png",
+            },
+       });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<script>function toggleFullscreen() {
+let elem = document.querySelector("iframe");
+
+if (!document.fullscreenElement) {
+  elem.requestFullscreen().catch((err) => {
+    alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+  });
+} else {
+  document.exitFullscreen();
+}
+}</script>
 
 
-<script src='https://content.jwplatform.com/libraries/KB5zFt7A.js'></script>
-<script type="text/javascript" charset="utf-8" async="" src="//ssl.p.jwpcdn.com/player/v/8.25.8/jwpsrv.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-<script> jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
-<div id="player"></div>
-<script type="text/javascript">
-var playerInstance=jwplayer("player");
-
-playerInstance.setup({
-
-    playlist: [{
-    "title": "REPRODUCTOR | PAPPO",
-    "description": "EN VIVO",
- 
-      "sources": [
-        {
-          "default": false,
-          "type": "dash",
-          "file": '//edge-live17-sl.cvattv.com.ar/live/c6eds/TV5_Monde/SA_Live_dash_enc/TV5_Monde.mpd',
-          "drm": {
-            "clearkey": {"keyId": '62034ff5988b4787b17cdf6f751a3142', "key": 'b3938f0af28b4c0c082b0d4210e389a0'}
-          },
-          "label": "0"
-        }
-      ]
-    }],
-    width: "100%",
-    height: "100%",
-    aspectratio: "16:9",
-    autostart: false,
-    cast: {},
-    sharing: {}
-});
-</script>
-
-</body></html>
 
